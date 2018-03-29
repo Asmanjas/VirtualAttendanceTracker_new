@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gbackground"
+    tools:context=".login_faculty">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="510dp"
+        android:layout_gravity="top"
+        android:gravity="top"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/faculty_name_login_faculty"
+            android:layout_width="313dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="33dp"
+            android:layout_marginTop="22dp"
+            android:hint="FACULTY NAME"
+            android:paddingTop="60dp"
+
+            />
+
+        <EditText
+            android:id="@+id/faculty_password_login_faculty"
+            android:layout_width="313dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="33dp"
+            android:layout_marginTop="12dp"
+            android:hint="PASSWORD" />
+
+        <Button
+            android:id="@+id/login_button_login_faculty"
+            android:layout_width="187dp"
+            android:layout_height="48dp"
+            android:layout_marginLeft="86dp"
+            android:layout_marginTop="57dp"
+            android:background="@drawable/buttonstyle"
+            android:text="LOGIN"
+            android:textColor="#fff"
+            android:textSize="17dp" />
+
+        <Button
+            android:id="@+id/register_button_login_faculty"
+            android:layout_width="187dp"
+            android:layout_height="49dp"
+            android:layout_marginLeft="86dp"
+            android:layout_marginTop="37dp"
+            android:background="@drawable/buttonstyle"
+            android:text="REGISTER"
+            android:textColor="#fff"
+            android:textSize="18dp" />
+    </LinearLayout>
+</RelativeLayout>
+
+

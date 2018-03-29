@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    tools:context=".Tab1">
+
+
+    <Spinner
+        android:id="@+id/spinner1"
+        android:layout_width="170dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleBar" />
+
+    <TextView
+        android:id="@+id/time_start1"
+        android:layout_width="80dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"
+        android:text="TextView1"
+        android:textAlignment="center"
+        app:layout_constraintStart_toEndOf="@+id/spinner1"
+        app:layout_constraintTop_toBottomOf="@+id/titleBar2" />
+
+    <TextView
+        android:id="@+id/time_end1"
+        android:layout_width="80dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:text="TextView1"
+        android:textAlignment="center"
+        app:layout_constraintBaseline_toBaselineOf="@+id/time_start1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/time_start1" />
+
+
+    <Spinner
+        android:id="@+id/spinner2"
+        android:layout_width="170dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner1" />
+
+    <TextView
+        android:id="@+id/time_start2"
+        android:layout_width="80dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="12dp"
+        android:text="TextView2"
+        android:textAlignment="center"
+        app:layout_constraintStart_toEndOf="@+id/spinner2"
+        app:layout_constraintTop_toBottomOf="@+id/time_start1" />
+
+    <TextView
+        android:id="@+id/time_end2"
+        android:layout_width="80dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:text="TextView2"
+        android:textAlignment="center"
+        app:layout_constraintBaseline_toBaselineOf="@+id/time_start2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/time_start2" />
+
+
+    <Spinner
+        android:id="@+id/spinner3"
+        android:layout_width="170dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner2" />
+
+    <TextView
+        android:id="@+id/time_start3"
+        android:layout_width="80dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="12dp"
+        android:text="TextView3"
+        android:textAlignment="center"
+        app:layout_constraintStart_toEndOf="@+id/spinner3"
+        app:layout_constraintTop_toBottomOf="@+id/time_start2" />
+
+    <TextView
+        android:id="@+id/time_end3"
+        android:layout_width="80dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:text="TextView3"
+        android:textAlignment="center"
+        app:layout_constraintBaseline_toBaselineOf="@+id/time_start3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/time_start3" />
+
+    <TextView
+        android:id="@+id/titleBar"
+        android:layout_width="170dp"
+        android:layout_height="35dp"
+
+        android:layout_marginTop="16dp"
+        android:text="Subject Name"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/titleBar3"
+        android:layout_width="80dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="8dp"
+
+        android:text="End Time"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/titleBar2"
+        app:layout_constraintStart_toEndOf="@+id/titleBar2" />
+
+    <TextView
+        android:id="@+id/titleBar2"
+        android:layout_width="80dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="32dp"
+
+        android:text="Start Time"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/titleBar"
+        app:layout_constraintStart_toEndOf="@+id/titleBar" />
+
+    <Spinner
+        android:id="@+id/spinner4"
+        android:layout_width="170dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner3" />
+
+    <TextView
+        android:id="@+id/time_start4"
+        android:layout_width="80dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="12dp"
+        android:text="TextView3"
+        android:textAlignment="center"
+        app:layout_constraintStart_toEndOf="@+id/spinner3"
+        app:layout_constraintTop_toBottomOf="@+id/time_start3" />
+
+    <TextView
+        android:id="@+id/time_end4"
+        android:layout_width="80dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:text="TextView3"
+        android:textAlignment="center"
+        app:layout_constraintBaseline_toBaselineOf="@+id/time_start4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/time_start4" />
+
+
+
+    <Spinner
+        android:id="@+id/spinner5"
+        android:layout_width="170dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner4" />
+
+    <TextView
+        android:id="@+id/time_start5"
+        android:layout_width="80dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="12dp"
+        android:text="TextView3"
+        android:textAlignment="center"
+        app:layout_constraintStart_toEndOf="@+id/spinner5"
+        app:layout_constraintTop_toBottomOf="@+id/time_start4" />
+
+    <TextView
+        android:id="@+id/time_end5"
+        android:layout_width="80dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:text="TextView3"
+        android:textAlignment="center"
+        app:layout_constraintBaseline_toBaselineOf="@+id/time_start5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/time_start5" />
+
+
+
+
+    <Spinner
+        android:id="@+id/spinner6"
+        android:layout_width="170dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner5" />
+
+    <TextView
+        android:id="@+id/time_start6"
+        android:layout_width="80dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="12dp"
+        android:text="TextView3"
+        android:textAlignment="center"
+        app:layout_constraintStart_toEndOf="@+id/spinner6"
+        app:layout_constraintTop_toBottomOf="@+id/time_start5" />
+
+    <TextView
+        android:id="@+id/time_end6"
+        android:layout_width="80dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:text="TextView3"
+        android:textAlignment="center"
+        app:layout_constraintBaseline_toBaselineOf="@+id/time_start6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/time_start6" />
+
+
+
+    <Spinner
+        android:id="@+id/spinner7"
+        android:layout_width="170dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner6" />
+
+    <TextView
+        android:id="@+id/time_start7"
+        android:layout_width="80dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="12dp"
+        android:text="TextView3"
+        android:textAlignment="center"
+        app:layout_constraintStart_toEndOf="@+id/spinner7"
+        app:layout_constraintTop_toBottomOf="@+id/time_start6" />
+
+    <TextView
+        android:id="@+id/time_end7"
+        android:layout_width="80dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:text="TextView3"
+        android:textAlignment="center"
+        app:layout_constraintBaseline_toBaselineOf="@+id/time_start7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/time_start7" />
+
+
+
+    <Spinner
+        android:id="@+id/spinner8"
+        android:layout_width="170dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner7" />
+
+    <TextView
+        android:id="@+id/time_start8"
+        android:layout_width="80dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="12dp"
+        android:text="TextView3"
+        android:textAlignment="center"
+        app:layout_constraintStart_toEndOf="@+id/spinner8"
+        app:layout_constraintTop_toBottomOf="@+id/time_start7" />
+
+    <TextView
+        android:id="@+id/time_end8"
+        android:layout_width="80dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:text="TextView3"
+        android:textAlignment="center"
+        app:layout_constraintBaseline_toBaselineOf="@+id/time_start8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/time_start8" />
+</android.support.constraint.ConstraintLayout>

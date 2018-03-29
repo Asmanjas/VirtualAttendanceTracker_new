@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Module_student">
+
+    <Button
+        android:id="@+id/back_button_module_student"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/x1" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="40dp"
+        android:background="@color/colorPrimaryDark"
+        >
+
+
+        <TextView
+            android:id="@+id/textViewAboutMe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30dp"
+            android:text="About Me"
+            android:textColor="#fff"/>
+
+
+
+    </LinearLayout>
+    <ImageView
+        android:id="@+id/Circle"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/b2"
+
+        android:layout_marginLeft="300dp"
+        android:layout_marginTop="105dp"
+        />
+
+    <ImageView
+        android:id="@+id/starImage"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/ic_star_black_24dp"
+        android:tint="@color/green"
+        android:layout_marginLeft="300dp"
+        android:layout_marginTop="105dp"
+        />
+
+    <ImageView
+        android:id="@+id/listItemNoteImg1"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="170dp"
+        android:layout_centerVertical="true"
+        android:src="@drawable/ic_person_black_24dp"
+        android:tint="@color/green"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearance"
+        android:text="StuName"
+        android:textStyle="bold"
+        android:textSize="17sp"
+        android:layout_marginTop="170sp"
+        android:id="@+id/Student_name_module_student"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/listItemNoteImg1"
+        android:layout_toRightOf="@id/listItemNoteImg1"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:layout_marginBottom="2dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/Student_name_module_student"
+        android:layout_toEndOf="@id/listItemNoteImg1"
+        android:layout_toRightOf="@id/listItemNoteImg1"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:text="Name"
+        android:textSize="14sp" />
+
+
+    <ImageView
+        android:id="@+id/listItemNoteImg2"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="230dp"
+        android:layout_centerVertical="true"
+        android:src="@drawable/ic_assignment_ind_black_24dp"
+        android:tint="@color/green"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearance"
+        android:text="17CA0**"
+        android:textStyle="bold"
+        android:textSize="17sp"
+        android:layout_marginTop="230sp"
+        android:id="@+id/roll_number_module_student"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/listItemNoteImg2"
+        android:layout_toRightOf="@id/listItemNoteImg2"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:layout_marginBottom="2dp"/>
+
+    <TextView
+        android:id="@+id/roll_n"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/roll_number_module_student"
+        android:layout_toEndOf="@id/listItemNoteImg2"
+        android:layout_toRightOf="@id/listItemNoteImg2"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:text="Roll Number"
+        android:textSize="14sp" />
+
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="290dp"
+        android:layout_centerVertical="true"
+        android:src="@drawable/ic_group_black_24dp"
+        android:tint="@color/green"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearance"
+        android:text="Theory_Batch"
+        android:textStyle="bold"
+        android:textSize="17sp"
+        android:layout_marginTop="290sp"
+        android:id="@+id/Theory_Batch_module_student"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/img"
+        android:layout_toRightOf="@id/img"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:layout_marginBottom="2dp"/>
+
+    <TextView
+        android:id="@+id/T_B"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/Theory_Batch_module_student"
+        android:layout_toEndOf="@id/img"
+        android:layout_toRightOf="@id/img"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:text="Theory Batch"
+
+    android:textSize="14sp" />
+    <ImageView
+        android:id="@+id/img2"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="350dp"
+        android:layout_centerVertical="true"
+        android:src="@drawable/ic_group_black_24dp"
+        android:tint="@color/green"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearance"
+        android:text="Lab Batch"
+        android:textStyle="bold"
+        android:textSize="17sp"
+        android:layout_marginTop="350sp"
+        android:id="@+id/LAB_Batch_module_student"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/img"
+        android:layout_toRightOf="@id/img"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:layout_marginBottom="2dp"/>
+
+    <TextView
+        android:id="@+id/L_B"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/LAB_Batch_module_student"
+        android:layout_toEndOf="@id/img"
+        android:layout_toRightOf="@id/img"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:text="Lab Batch"
+        android:textSize="14sp" />
+
+    <ImageView
+        android:id="@+id/listItemNoteImg"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="400dp"
+        android:layout_centerVertical="true"
+        android:src="@drawable/ic_control_point_black_24dp"
+        android:tint="@color/green"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"/>
+
+    <TextView
+        android:id="@+id/percent_attendance_module_student"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="2dp"
+        android:layout_marginTop="400sp"
+        android:layout_toEndOf="@+id/listItemNoteImg"
+        android:layout_toRightOf="@id/listItemNoteImg"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:text="attendance percent"
+        android:textAppearance="?android:attr/textAppearance"
+        android:textSize="17sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/attendance_p"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/percent_attendance_module_student"
+        android:layout_toEndOf="@id/listItemNoteImg"
+        android:layout_toRightOf="@id/listItemNoteImg"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:text="Attendance"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/textMessage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="480dp"
+        android:text="         Want to know more about attendance?"
+        android:textSize="15dp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/follow_me_module_student"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="9dp"
+            android:layout_marginLeft="130dp"
+            android:layout_marginTop="510dp"
+            android:background="@drawable/buttonstyle"
+
+            android:text="follow me"
+            android:textSize="15dp" />
+
+    </LinearLayout>
+
+</RelativeLayout>

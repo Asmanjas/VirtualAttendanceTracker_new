@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Virtual Attendance Tracker</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="attendance">Attendance</string>
+    <string name="dialog_title">Name of student [tick the absent ones]</string>
+    <string name="ok_label">OK</string>
+    <string name="dismiss_label">Dismiss</string>
+    <string name="clear_all_label">Clear all</string>
+    <string-array name="student_name">
+        <item>Asmanjas   174019</item>
+        <item>Anshul__   174014</item>
+        <item>Avinash_   174015</item>
+        <item>Abhishek   174016</item>
+        <item>bulbul__   174023</item>
+        <item>shivam__   174066</item>
+        <item>suman___   174078</item>
+        <item>shweta__   174072</item>
+
+    </string-array>
+</resources>

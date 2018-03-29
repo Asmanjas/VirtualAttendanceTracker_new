@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".login_student"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="219dp"
+        android:background="@color/colorPrimaryDark"
+        android:orientation="vertical"
+        android:padding="50dp">
+
+        <TextView
+            android:layout_width="234dp"
+            android:layout_height="wrap_content"
+            android:text="Welcome"
+            android:textColor="#fff"
+            android:textSize="40sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="Attend today, and achieve tomorrow"
+            android:textColor="#fff"
+            android:textSize="15dp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="227dp"
+        android:gravity="center"
+
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/roll_number_login_student"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_person_black_24dp"
+            android:hint="ROLL NUMBER" />
+
+        <EditText
+            android:id="@+id/password_login_student"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_vpn_key_black_24dp"
+            android:hint="PASSWORD"
+            android:inputType="textPassword" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="144dp"
+        android:layout_marginTop="-90dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/back_button_login_student"
+            android:layout_width="111dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@drawable/button_style_new"
+            android:drawableLeft="@drawable/ic_arrow_back_black_24dp"
+            android:text="back"
+            android:textColor="#fff" />
+
+        <Button
+            android:id="@+id/go_button_login_student"
+            android:layout_width="111dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@drawable/button_style_new"
+            android:drawableRight="@drawable/ic_arrow_forward_black_24dp"
+            android:text="go"
+            android:textColor="#fff" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="-30dp"
+        android:gravity="center"
+
+        >
+
+        <Button
+            android:id="@+id/create_account_login_student"
+            android:layout_width="219dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_style_new"
+            android:drawableLeft="@drawable/ic_person_add_black_24dp"
+            android:text="create account"
+            android:textColor="#fff" />
+
+
+    </LinearLayout>
+</LinearLayout>

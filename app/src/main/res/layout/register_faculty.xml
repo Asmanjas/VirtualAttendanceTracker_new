@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gbackground"
+    tools:context=".register_faculty">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="510dp"
+        android:layout_gravity="top"
+        android:gravity="top"
+        android:orientation="vertical"
+        >
+
+
+        <EditText
+            android:id="@+id/register_name_register_faculty"
+            android:layout_width="313dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="33dp"
+            android:layout_marginTop="28dp"
+            android:hint="FACULTY NAME"
+
+            />
+
+        <EditText
+            android:id="@+id/register_subject_register_faculty"
+            android:layout_width="313dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="33dp"
+            android:hint="SUBJECT" />
+
+        <EditText
+            android:id="@+id/register_faculty_batch_register_faculty"
+            android:layout_width="313dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="33dp"
+            android:hint="Theory batch" />
+
+        <EditText
+            android:id="@+id/register_faculty_batch_lab_register_faculty2"
+            android:layout_width="313dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="33dp"
+            android:hint="LAB batch" />
+
+        <EditText
+            android:id="@+id/register_faculty_password"
+            android:layout_width="313dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="33dp"
+            android:hint="PASSWORD" />
+
+        <EditText
+            android:id="@+id/register_faculty_repassword"
+            android:layout_width="313dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="33dp"
+            android:hint="RE-ENTER PASSWORD" />
+
+
+
+        <Button
+            android:id="@+id/register_button_faculty_register"
+            android:layout_width="187dp"
+            android:layout_height="49dp"
+            android:layout_marginLeft="85dp"
+            android:layout_marginTop="26dp"
+            android:background="@drawable/buttonstyle10"
+            android:text="REGISTER"
+            android:textColor="#fff"
+            android:textSize="18dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_gravity="center"
+            >
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="Already registered?"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="25dp" />
+
+
+        </LinearLayout>
+        <Button
+            android:id="@+id/login_button_faculty_register"
+            android:layout_width="187dp"
+            android:layout_height="48dp"
+            android:layout_marginLeft="85dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/buttonstyle10"
+            android:text="LOGIN"
+            android:textColor="#fff"
+            android:textSize="17dp" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>
+
+

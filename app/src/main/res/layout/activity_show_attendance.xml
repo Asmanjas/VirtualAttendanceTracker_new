@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".showAttendance"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/textView_fortesting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Asmanjas"
+        android:textColor="@color/graylight"
+        android:textStyle="bold" />
+
+    <ViewStub
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="250dp"
+        android:id="@+id/stublist"
+        android:inflatedId="@+id/showlayout"
+        android:layout="@layout/frame"/>
+    <ViewStub
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/stubgrid"
+        android:layout_marginTop="10dp"
+        android:inflatedId="@+id/showlayout"
+        android:layout="@layout/mygridview"/>
+
+</LinearLayout>
