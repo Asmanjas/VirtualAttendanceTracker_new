@@ -34,9 +34,9 @@ public class HttpParse {
 
             HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
 
-            httpURLConnection.setReadTimeout(14000);
+            httpURLConnection.setReadTimeout(120000);
 
-            httpURLConnection.setConnectTimeout(14000);
+            httpURLConnection.setConnectTimeout(120000);
 
             httpURLConnection.setRequestMethod("POST");
 

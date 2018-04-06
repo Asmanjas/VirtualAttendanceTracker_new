@@ -32,8 +32,8 @@ public class Gridviewadapter extends ArrayAdapter<Product> {
 
         }
         Product product=getItem(position);
-        ImageView img=(ImageView) v.findViewById(R.id.image_view_1);
-        TextView txtTitle=(TextView) v.findViewById(R.id.texttitle);
+        ImageView img=(ImageView) v.findViewById(R.id.image_listView);
+        TextView txtTitle=(TextView) v.findViewById(R.id.subject_name_list_view);
         TextView txtDescription=(TextView) v.findViewById(R.id.textdescription);
 
         img.setImageResource(product.getImageid());

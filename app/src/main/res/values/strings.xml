@@ -2,7 +2,8 @@
     <string name="app_name">Virtual Attendance Tracker</string>
     <string name="title_activity_maps">Map</string>
     <string name="attendance">Attendance</string>
-    <string name="dialog_title">Name of student [tick the absent ones]</string>
+    <string name="dialog_title">Name of student [tick the present ones ] </string>
+    <string name="dialog_titleg">subject wise attendance</string>
     <string name="ok_label">OK</string>
     <string name="dismiss_label">Dismiss</string>
     <string name="clear_all_label">Clear all</string>

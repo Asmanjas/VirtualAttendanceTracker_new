@@ -44,10 +44,10 @@ public class Module_student extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_module_student);
         theory_batch = (TextView)findViewById(R.id.Theory_Batch_module_student);
-        roll_number = (TextView)findViewById(R.id.roll_number_module_student);
-        student_name = (TextView)findViewById(R.id.Student_name_module_student);
+        roll_number = (TextView)findViewById(R.id.email_id_module_g);
+        student_name = (TextView)findViewById(R.id.student_name_module_g);
         lab_batch = (TextView)findViewById(R.id.LAB_Batch_module_student);
-        attendance_percent_tx = (TextView)findViewById(R.id.percent_attendance_module_student);
+        attendance_percent_tx = (TextView)findViewById(R.id.attendance_percent_module_g);
 followMe = (Button)findViewById(R.id.follow_me_module_student);
 
         Intent intent = getIntent();
@@ -59,6 +59,7 @@ followMe = (Button)findViewById(R.id.follow_me_module_student);
 
         String url =  "http://192.168.0.102/VirtualAttendanceTracker/AccessStudentDetails.php?Roll_Number=";
         String url2 = "http://192.168.0.102/VirtualAttendanceTracker/AccessStudentDetailsForAttendancePercent.php?Roll_Number=";
+        String url3 = "http://192.168.0.102/VirtualAttendanceTracker/AccessStudentDetailsForAttendancePercent.php?Roll_Number=";
 
         downloadJSON(roll_number_holder, url + roll_number_holder);
         downloadJSON1(roll_number_holder, url2 + roll_number_holder);

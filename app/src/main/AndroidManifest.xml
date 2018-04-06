@@ -61,7 +61,10 @@
         <activity android:name=".Friday" />
         <activity
             android:name=".MapsActivity"
-            android:label="@string/title_activity_maps"></activity>
+            android:label="@string/title_activity_maps" />
+        <activity android:name=".showAttendanceG"></activity>
+
+        <service android:name=".AttendanceCalculationService"/>
     </application>
 
 </manifest>

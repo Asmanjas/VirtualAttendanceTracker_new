@@ -11,14 +11,14 @@
 
     >
     <ImageView
-        android:id="@+id/image_view_1"
+        android:id="@+id/image_listView_g"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:background="@drawable/dsa"
         android:layout_gravity="center"/>
 
     <TextView
-        android:id="@+id/texttitle"
+        android:id="@+id/subject_name_list_view_G"
         android:layout_width="50dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"

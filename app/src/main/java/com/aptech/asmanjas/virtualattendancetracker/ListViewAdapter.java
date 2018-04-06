@@ -33,11 +33,11 @@ public class ListViewAdapter extends ArrayAdapter<Product> {
 
         }
         Product product=getItem(position);
-        ImageView img=(ImageView) v.findViewById(R.id.image_view_1);
-        TextView txtTitle=(TextView) v.findViewById(R.id.texttitle);
-        TextView class_att = (TextView)v.findViewById(R.id.class_attended);
+        ImageView img=(ImageView) v.findViewById(R.id.image_listView);
+        TextView txtTitle=(TextView) v.findViewById(R.id.subject_name_list_view);
+        TextView class_att = (TextView)v.findViewById(R.id.classes_List_View);
         TextView total_cl = (TextView)v.findViewById(R.id.total_classes);
-        TextView out_of = (TextView)v.findViewById(R.id.total_classes);
+        TextView out_of = (TextView)v.findViewById(R.id.out_of);
 
         img.setImageResource(product.getImageid());
         txtTitle.setText(product.getTitle());

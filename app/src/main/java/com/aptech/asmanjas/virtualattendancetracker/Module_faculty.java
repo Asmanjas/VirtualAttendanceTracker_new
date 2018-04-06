@@ -28,9 +28,10 @@ public class Module_faculty extends AppCompatActivity {
     String present_students_roll_numbers;
     String abc = "";
     String abc2 = "";
-    String subject_db="DBMS";
+    String subject_db = "DBMS";
     HttpParse httpParse = new HttpParse();
     public String[] data,data2,trimmed_Roll_Number;
+    String faculty_subject;
     int dd,yy,mm;
     final Calendar cal = Calendar.getInstance();
     String FinalResult;
@@ -44,12 +45,12 @@ public class Module_faculty extends AppCompatActivity {
     boolean[] checkedItems;
     ArrayList<Integer> mUserItems = new ArrayList<>();
     ArrayList<Integer> mUserNotSelectedItems = new ArrayList<>();
-    String[] NotSelectedItems;
+    String[] SelectedItems;
 
     String faculty_name_holder;
     String url = "http://192.168.0.102/VirtualAttendanceTracker/AccessFacultyDetails.php?FacultyName=";
     String url2 = "http://192.168.0.102/VirtualAttendanceTracker/AccessStudentDetailsforAttendance.php?Subject=";
-    String url3 = "http://192.168.0.102/VirtualAttendanceTracker/test.php";
+    String url3 = "http://192.168.0.102/VirtualAttendanceTracker/UpdateAttendanceTable.php";
 
     @Override
     protected void  onCreate(Bundle savedInstanceState) {
@@ -106,8 +107,8 @@ public class Module_faculty extends AppCompatActivity {
 
                             }
                         }
-                        else{
-                            if(! mUserNotSelectedItems.contains(position)) {
+                        /*if(!isChecked){
+                            if(!mUserNotSelectedItems.contains(position)) {
                                 mUserNotSelectedItems.add(position);
                             }
                             else if(mUserNotSelectedItems.contains(position)){
@@ -115,7 +116,7 @@ public class Module_faculty extends AppCompatActivity {
 
                             }
 
-                        }
+                        }*/
                     }
                 });
 
@@ -124,20 +125,21 @@ public class Module_faculty extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialogInterface,int which) {
 
-//My code
+
+                        SelectedItems = new String[mUserItems.size()];
+                        trimmed_Roll_Number = new String[mUserItems.size()];
+
+                        for (int i=0; i<mUserItems.size(); i++) {
+                            SelectedItems[i] = listItems[mUserItems.get(i)];
+                            trimmed_Roll_Number[i] = SelectedItems[i].substring(0,8);
+                            insertIntoTest(trimmed_Roll_Number[i],faculty_subject,url3);
+                        }
+
+                        // mItemSelected.setText("");*/
 
 
-                        for (int i=0; i<mUserNotSelectedItems.size(); i++) {
-                            NotSelectedItems[i] = listItems[mUserNotSelectedItems.get(i)];
-                        }
-                        for (int i=0; i<mUserNotSelectedItems.size(); i++){
-                            trimmed_Roll_Number[i] = NotSelectedItems[i].substring(0,7);
-                            insertIntoTest(trimmed_Roll_Number[i],url3);
-                            
-                        }
-                        // mItemSelected.setText("");
-//My code ends
-                        String item = "";
+
+                      String item = "";
                         for (int i=0; i<mUserItems.size(); i++) {
                             item = item + listItems[mUserItems.get(i)];
 
@@ -145,7 +147,9 @@ public class Module_faculty extends AppCompatActivity {
                                 item = item + ", ";
                             }
                         }
+
                         mItemSelected.setText(item);
+
                     }
                 });
 
@@ -250,10 +254,11 @@ public class Module_faculty extends AppCompatActivity {
            /* int x =  obj.getInt("attendance")/obj.getInt("total_attendance");
             float p = Float.parseFloat(x);
             stocks[i] = " " + p;*/
-            String faculty_subject = obj.getString("FacultySubject");
+            faculty_subject = obj.getString("FacultySubject");
 
             show_facuty_name.setText(faculty_name_holder);
             show_subject.setText(faculty_subject);
+             // subject_db = faculty_subject;
 
         }
         //ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, stocks);
@@ -333,27 +338,19 @@ public class Module_faculty extends AppCompatActivity {
     private void loadIntoView2(String json1) throws JSONException {
         JSONArray jsonArray2 = new JSONArray(json1);
         /*data2*/listItems = new String[jsonArray2.length()];
+
         for (int i = 0; i < jsonArray2.length(); i++) {
             JSONObject obj = jsonArray2.getJSONObject(i);
             listItems[i] = obj.getString("Roll_Number") + " " + obj.getString("First_Name");
-           /* int x =  obj.getInt("attendance")/obj.getInt("total_attendance");
-            float p = Float.parseFloat(x);
-            stocks[i] = " " + p;*/
-            /*String faculty_subject = obj.getString("FacultySubject");
 
-            show_facuty_name.setText(faculty_name_holder);
-            show_subject.setText(faculty_subject);*/
 
         }
         checkedItems = new boolean[listItems.length];
-        //ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, stocks);
-        //listView.setAdapter(arrayAdapter);
-        // tx.setText(stocks[1]);
 
     }
 
 
-    public void insertIntoTest(final String trimmed_roll_n,final String urlwebservice3){
+    public void insertIntoTest(final String trimmed_roll_n,final String subject1,final String urlwebservice3){
 
         class insertintotestClass extends AsyncTask<String,Void,String> {
 
@@ -361,7 +358,7 @@ public class Module_faculty extends AppCompatActivity {
             protected void onPreExecute() {
                 super.onPreExecute();
 
-                progressDialog = ProgressDialog.show(Module_faculty.this,"Loading Data",null,true,true);
+                //progressDialog = ProgressDialog.show(Module_faculty.this,"Loading Data",null,true,true);
             }
 
             @Override
@@ -369,9 +366,9 @@ public class Module_faculty extends AppCompatActivity {
 
                 super.onPostExecute(httpResponseMsg);
 
-                progressDialog.dismiss();
+                //progressDialog.dismiss();
 
-                Toast.makeText(Module_faculty.this,httpResponseMsg.toString(), Toast.LENGTH_LONG).show();
+                // Toast.makeText(Module_faculty.this,httpResponseMsg.toString(), Toast.LENGTH_LONG).show();
 
             }
 
@@ -380,6 +377,7 @@ public class Module_faculty extends AppCompatActivity {
 
 
                 hashMap.put("Roll_Number",params[0]);
+                hashMap.put("Subject",params[1]);
 
 
 
@@ -393,7 +391,7 @@ public class Module_faculty extends AppCompatActivity {
 
         insertintotestClass insertg = new insertintotestClass();
 
-       insertg.execute(trimmed_roll_n,urlwebservice3);
+       insertg.execute(trimmed_roll_n,subject1,urlwebservice3);
     }
 
 

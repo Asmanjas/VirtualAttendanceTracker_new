@@ -84,16 +84,11 @@ public class gLoginScreenActivity extends AppCompatActivity {
                     progressDialog.dismiss();
                     if(httpResponseMsg.equalsIgnoreCase("Data matched"))    {
                         finish();
-                    /*SharedPreferences settings = getSharedPreferences(user_roll_number, Context.MODE_PRIVATE);
-                    SharedPreferences.Editor editor = settings.edit();
-                    editor.putString("roll_number", roll_number_holder);
-                    editor.commit();*/
+
                         Intent intent = new Intent(gLoginScreenActivity.this,mainModuleG.class);
                         intent.putExtra(user_email,email);
                         startActivity(intent);
-                    /*Intent intent10 = new Intent(login_student.this,showAttendance.class);
-                    intent10.putExtra(user_roll_number2,roll_number);
-                    */
+
                     }
                     else    {
                         Toast.makeText(gLoginScreenActivity.this,"Invalid details",Toast.LENGTH_LONG).show();
