@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class subjectNameG extends Activity /*implements
@@ -18,11 +19,18 @@ public class subjectNameG extends Activity /*implements
 
     // Add button
     Button btnAdd,btndone;
+TextView tx_subject_names;
+String[] subject_names = new String[10];
 
     // Input text
+
     EditText inputLabel;
     String parsed_email_holder;
     public final String further_parsed_email = "";
+    int i=0;
+    String url4dbAccess = "http://192.168.0.102/VirtualAttendanceTracker/G/AccessStudentDetailsFromTEMPdb.php";
+    String getUrl4dbInsert = "http://192.168.0.102/VirtualAttendanceTracker/G/InsertStudentDetails.php";
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -31,38 +39,32 @@ public class subjectNameG extends Activity /*implements
 
 
         Intent k = getIntent();
-        //parsed_email_holder = k.getStringExtra(enterDetailsG.email)
+        parsed_email_holder = k.getStringExtra("email_holder");
 
-        // Spinner element
-       // spinner1 = (Spinner) findViewById(R.id.spinner12);
 
-        // add button
+
         btnAdd = (Button) findViewById(R.id.add_button_subject_name_g);
         btndone = (Button)findViewById(R.id.next_button);
-
-
-        // new label input field
+        tx_subject_names = (TextView)findViewById(R.id.text_view_subject_names_g);
         inputLabel = (EditText) findViewById(R.id.subject_name_g_edittext);
 
 
 
 
-        // Spinner click listener
-       // spinner1.setOnItemSelectedListener(this);
 
-        // Loading spinner data from database
-       // loadSpinnerData();
-
-        /**
-         * Add new label button click listener
-         * */
         btnAdd.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View arg0) {
                 String label = inputLabel.getText().toString();
+                subject_names[i] = label;
+                i = i+1;
+                tx_subject_names.setText(label);
 
                 if (label.trim().length() > 0) {
+
+
+
                     // database handler
                     SQLiteDatabaseHandler db = new SQLiteDatabaseHandler(
                             getApplicationContext());
@@ -78,8 +80,6 @@ public class subjectNameG extends Activity /*implements
                     InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
                     imm.hideSoftInputFromWindow(inputLabel.getWindowToken(), 0);
 
-                    // loading spinner with newly added data
-                    //loadSpinnerData();
                 } else {
                     Toast.makeText(getApplicationContext(), "Please enter label name",
                             Toast.LENGTH_SHORT).show();
@@ -94,48 +94,11 @@ public class subjectNameG extends Activity /*implements
             @Override
             public void onClick(View v) {
                 Intent x = new Intent(subjectNameG.this,Monday.class);
+                x.putExtra("email_id",parsed_email_holder);
                 startActivity(x);
             }
         });
     }
 
-    /**
-     * Function to load the spinner data from SQLite database
-     * */
-  /* private void loadSpinnerData() {
-        // database handler
-        SQLiteDatabaseHandler db = new SQLiteDatabaseHandler(getApplicationContext());
 
-        // Spinner Drop down elements
-        List<String> lables = db.getAllLabels();
-
-        // Creating adapter for spinner
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_spinner_item, lables);
-
-        // Drop down layout style - list view with radio button
-        dataAdapter
-                .setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-        // attaching data adapter to spinner
-        //spinner1.setAdapter(dataAdapter);
-    }
-
-    @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position,
-                               long id) {
-        // On selecting a spinner item
-        String label = parent.getItemAtPosition(position).toString();
-
-        // Showing selected spinner item
-        Toast.makeText(parent.getContext(), "You selected: " + label,
-                Toast.LENGTH_LONG).show();
-
-    }
-
-    @Override
-    public void onNothingSelected(AdapterView<?> arg0) {
-        // TODO Auto-generated method stub
-
-    }*/
 }

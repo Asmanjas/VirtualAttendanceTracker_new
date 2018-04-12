@@ -18,7 +18,7 @@
         app:layout_constraintTop_toBottomOf="@+id/titleBar" />
 
     <TextView
-        android:id="@+id/time_start1"
+        android:id="@+id/time_start1_tue"
         android:layout_width="80dp"
         android:layout_height="35dp"
         android:layout_marginStart="32dp"
@@ -36,10 +36,10 @@
         android:layout_marginStart="8dp"
         android:text="TextView1"
         android:textAlignment="center"
-        app:layout_constraintBaseline_toBaselineOf="@+id/time_start1"
+        app:layout_constraintBaseline_toBaselineOf="@+id/time_start1_tue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/time_start1" />
+        app:layout_constraintStart_toEndOf="@+id/time_start1_tue" />
 
 
     <Spinner
@@ -51,7 +51,7 @@
         app:layout_constraintTop_toBottomOf="@+id/spinner1" />
 
     <TextView
-        android:id="@+id/time_start2"
+        android:id="@+id/time_start2_tue"
         android:layout_width="80dp"
         android:layout_height="35dp"
         android:layout_marginStart="32dp"
@@ -59,7 +59,7 @@
         android:text="TextView2"
         android:textAlignment="center"
         app:layout_constraintStart_toEndOf="@+id/spinner2"
-        app:layout_constraintTop_toBottomOf="@+id/time_start1" />
+        app:layout_constraintTop_toBottomOf="@+id/time_start1_tue" />
 
     <TextView
         android:id="@+id/time_end2"
@@ -69,10 +69,10 @@
         android:layout_marginStart="8dp"
         android:text="TextView2"
         android:textAlignment="center"
-        app:layout_constraintBaseline_toBaselineOf="@+id/time_start2"
+        app:layout_constraintBaseline_toBaselineOf="@+id/time_start2_tue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/time_start2" />
+        app:layout_constraintStart_toEndOf="@+id/time_start2_tue" />
 
 
     <Spinner
@@ -84,7 +84,7 @@
         app:layout_constraintTop_toBottomOf="@+id/spinner2" />
 
     <TextView
-        android:id="@+id/time_start3"
+        android:id="@+id/time_start3_tue"
         android:layout_width="80dp"
         android:layout_height="35dp"
         android:layout_marginStart="32dp"
@@ -92,7 +92,7 @@
         android:text="TextView3"
         android:textAlignment="center"
         app:layout_constraintStart_toEndOf="@+id/spinner3"
-        app:layout_constraintTop_toBottomOf="@+id/time_start2" />
+        app:layout_constraintTop_toBottomOf="@+id/time_start2_tue" />
 
     <TextView
         android:id="@+id/time_end3"
@@ -102,10 +102,10 @@
         android:layout_marginStart="8dp"
         android:text="TextView3"
         android:textAlignment="center"
-        app:layout_constraintBaseline_toBaselineOf="@+id/time_start3"
+        app:layout_constraintBaseline_toBaselineOf="@+id/time_start3_tue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/time_start3" />
+        app:layout_constraintStart_toEndOf="@+id/time_start3_tue" />
 
     <TextView
         android:id="@+id/titleBar"
@@ -155,7 +155,7 @@
         app:layout_constraintTop_toBottomOf="@+id/spinner3" />
 
     <TextView
-        android:id="@+id/time_start4"
+        android:id="@+id/time_start4_tue"
         android:layout_width="80dp"
         android:layout_height="35dp"
         android:layout_marginStart="32dp"
@@ -163,7 +163,7 @@
         android:text="TextView3"
         android:textAlignment="center"
         app:layout_constraintStart_toEndOf="@+id/spinner3"
-        app:layout_constraintTop_toBottomOf="@+id/time_start3" />
+        app:layout_constraintTop_toBottomOf="@+id/time_start3_tue" />
 
     <TextView
         android:id="@+id/time_end4"
@@ -173,10 +173,10 @@
         android:layout_marginStart="8dp"
         android:text="TextView3"
         android:textAlignment="center"
-        app:layout_constraintBaseline_toBaselineOf="@+id/time_start4"
+        app:layout_constraintBaseline_toBaselineOf="@+id/time_start4_tue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/time_start4" />
+        app:layout_constraintStart_toEndOf="@+id/time_start4_tue" />
 
 
 
@@ -197,7 +197,7 @@
         android:text="TextView3"
         android:textAlignment="center"
         app:layout_constraintStart_toEndOf="@+id/spinner5"
-        app:layout_constraintTop_toBottomOf="@+id/time_start4" />
+        app:layout_constraintTop_toBottomOf="@+id/time_start4_tue" />
 
     <TextView
         android:id="@+id/time_end5"

@@ -25,15 +25,15 @@ public class Monday extends Activity implements
         OnItemSelectedListener {
 
     Calendar dateTime = Calendar.getInstance();
-    Spinner spinner1,spinner2,spinner3,spinner4,spinner5,spinner6,spinner7,spinner8;
-    TextView ts1,ts2,ts3,ts4,ts5,ts6,ts7,ts8,te1,te2,te3,te4,te5,te6,te7,te8;
+    Spinner spinner1,spinner2,spinner3,spinner4/*,spinner5,spinner6,spinner7,spinner8*/;
+    TextView ts1,ts2,ts3,ts4/*,ts5,ts6,ts7,ts8*/,te1,te2,te3,te4/*,te5,te6,te7,te8*/;
     Button btnnext;
     EditText inputLabel;
     List<String> subject_names;
     String FinalResult;
-    String time_startx1,time_endx1;
+    String time_startx1,time_endx1,time_startx2,time_endx2,time_startx3,time_endx3,time_startx4,time_endx4;
     String label;// = new String[8];
-    public String email_holder = "asmanjas18@gmail.com",email_holderx;
+    public String email_holder="initial",email_holderx;
     public String day_holder = "Monday";
 
     String HttpUrl = "http://192.168.0.102/VirtualAttendanceTracker/G/InsertTimeTable.php";
@@ -47,20 +47,29 @@ public class Monday extends Activity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_monday);
 
+
+        Intent xk = getIntent();
+        email_holder = xk.getStringExtra("email_id");
+
         btnnext = (Button)findViewById(R.id.next_button_monday) ;
         btnnext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                // InsertIntoTable(/*email_holder,day_holder,*/label,time_startx1,time_endx1);
-                Intent x = new Intent(Monday.this,Tuesday.class);
-                startActivity(x);
+                if(email_holder=="initial"){
+
+                }
+                else {
+                    Intent x = new Intent(Monday.this, Tuesday.class);
+                    x.putExtra("email_tue", email_holder);
+                    startActivity(x);
+                }
             }
         });
 
 
 
-        Intent xk = getIntent();
-        email_holder = xk.getStringExtra("user_email");
+
 
 
         // Spinner element
@@ -68,30 +77,30 @@ public class Monday extends Activity implements
         spinner2 = (Spinner) findViewById(R.id.spinner2);
         spinner3 = (Spinner) findViewById(R.id.spinner3);
         spinner4 = (Spinner) findViewById(R.id.spinner4);
-        spinner5 = (Spinner) findViewById(R.id.spinner5);
+        /*spinner5 = (Spinner) findViewById(R.id.spinner5);
         spinner6 = (Spinner) findViewById(R.id.spinner6);
         spinner7 = (Spinner) findViewById(R.id.spinner7);
-        spinner8 = (Spinner) findViewById(R.id.spinner8);
+        spinner8 = (Spinner) findViewById(R.id.spinner8);*/
 
 
         ts1 = (TextView)findViewById(R.id.time_start1);
         ts2 = (TextView)findViewById(R.id.time_start2);
         ts3 = (TextView)findViewById(R.id.time_start3);
         ts4 = (TextView)findViewById(R.id.time_start4);
-        ts5 = (TextView)findViewById(R.id.time_start5);
+        /*ts5 = (TextView)findViewById(R.id.time_start5);
         ts6 = (TextView)findViewById(R.id.time_start6);
         ts7 = (TextView)findViewById(R.id.time_start7);
-        ts8 = (TextView)findViewById(R.id.time_start8);
+        ts8 = (TextView)findViewById(R.id.time_start8);*/
 
 
         te1 = (TextView)findViewById(R.id.time_end1);
         te2 = (TextView)findViewById(R.id.time_end2);
         te3 = (TextView)findViewById(R.id.time_end3);
         te4 = (TextView)findViewById(R.id.time_end4);
-        te5 = (TextView)findViewById(R.id.time_end5);
+        /*te5 = (TextView)findViewById(R.id.time_end5);
         te6 = (TextView)findViewById(R.id.time_end6);
         te7 = (TextView)findViewById(R.id.time_end7);
-        te8 = (TextView)findViewById(R.id.time_end8);
+        te8 = (TextView)findViewById(R.id.time_end8);*/
 
 
 
@@ -103,14 +112,14 @@ public class Monday extends Activity implements
         loadSpinnerData();
         spinner4.setOnItemSelectedListener(this);
         loadSpinnerData();
-        spinner5.setOnItemSelectedListener(this);
+      /*  spinner5.setOnItemSelectedListener(this);
         loadSpinnerData();
         spinner6.setOnItemSelectedListener(this);
         loadSpinnerData();
         spinner7.setOnItemSelectedListener(this);
         loadSpinnerData();
         spinner8.setOnItemSelectedListener(this);
-        loadSpinnerData();
+        loadSpinnerData();*/
 
 
 
@@ -155,7 +164,7 @@ public class Monday extends Activity implements
             }
         });
         updateTextLabel4();
-        ts5.setOnClickListener(new View.OnClickListener() {
+     /*   ts5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 updateTime5();
@@ -186,7 +195,7 @@ public class Monday extends Activity implements
 
             }
         });
-        updateTextLabel8();
+        updateTextLabel8();*/
         te1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -221,7 +230,7 @@ public class Monday extends Activity implements
             }
         });
         updateTextLabel12();
-        te5.setOnClickListener(new View.OnClickListener() {
+       /* te5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 updateTime13();
@@ -252,7 +261,7 @@ public class Monday extends Activity implements
 
             }
         });
-        updateTextLabel16();
+        updateTextLabel16();*/
 
 
 
@@ -282,10 +291,10 @@ public class Monday extends Activity implements
         spinner2.setAdapter(dataAdapter);
         spinner3.setAdapter(dataAdapter);
         spinner4.setAdapter(dataAdapter);
-        spinner5.setAdapter(dataAdapter);
+       /* spinner5.setAdapter(dataAdapter);
         spinner6.setAdapter(dataAdapter);
         spinner7.setAdapter(dataAdapter);
-        spinner8.setAdapter(dataAdapter);
+        spinner8.setAdapter(dataAdapter);*/
 
     }
 
@@ -299,8 +308,8 @@ public class Monday extends Activity implements
 
 
         // Showing selected spinner item
-        Toast.makeText(parent.getContext(), "You selected: " + label,
-                Toast.LENGTH_LONG).show();
+        /*Toast.makeText(parent.getContext(), "You selected: " + label,
+                Toast.LENGTH_LONG).show();*/
 
     }
 
@@ -363,17 +372,22 @@ public class Monday extends Activity implements
         int mins = dateTime.get(dateTime.MINUTE);
         if(hours<10 && mins<10)
         {
+            time_startx2 = ("0"+hours+":"+"0"+mins +":00");
             ts2.setText("0"+hours+":"+"0"+mins);
         }
         else if (hours<10 && mins>10)
         {
+            time_startx2 = ("0"+hours+":"+mins +":00");
             ts2.setText("0"+hours+":"+mins);
         }
         else if(hours>10 && mins<10){
+            time_startx2 = (hours+":"+"0"+mins +":00");
             ts2.setText(hours+":"+"0"+mins);
         }
-        else
-            ts2.setText(hours+":"+mins);
+        else {
+            time_startx2 = (hours + ":" + mins + ":00");
+            ts2.setText(hours + ":" + mins);
+        }
 
 
     }
@@ -400,19 +414,23 @@ public class Monday extends Activity implements
         int mins = dateTime.get(dateTime.MINUTE);
         if(hours<10 && mins<10)
         {
+            time_startx3 = ("0"+hours+":"+"0"+mins +":00");
             ts3.setText("0"+hours+":"+"0"+mins);
         }
         else if (hours<10 && mins>10)
         {
+            time_startx3 = ("0"+hours+":"+mins +":00");
             ts3.setText("0"+hours+":"+mins);
         }
         else if(hours>10 && mins<10){
+            time_startx3 = (hours+":"+"0"+mins +":00");
             ts3.setText(hours+":"+"0"+mins);
         }
-        else
-            ts3.setText(hours+":"+mins);
+        else {
+            time_startx3 = (hours + ":" + mins + ":00");
+            ts3.setText(hours + ":" + mins);
 
-
+        }
 
     }
     private void updateTime3(){
@@ -438,18 +456,22 @@ public class Monday extends Activity implements
         int mins = dateTime.get(dateTime.MINUTE);
         if(hours<10 && mins<10)
         {
+            time_startx4 = ("0"+hours+":"+"0"+mins +":00");
             ts4.setText("0"+hours+":"+"0"+mins);
         }
         else if (hours<10 && mins>10)
         {
+            time_startx4 = ("0"+hours+":"+mins +":00");
             ts4.setText("0"+hours+":"+mins);
         }
         else if(hours>10 && mins<10){
+            time_startx4 = (hours+":"+"0"+mins +":00");
             ts4.setText(hours+":"+"0"+mins);
         }
-        else
-            ts4.setText(hours+":"+mins);
-
+        else {
+            time_startx4 = (hours + ":" + mins + ":00");
+            ts4.setText(hours + ":" + mins);
+        }
 
 
     }
@@ -472,7 +494,7 @@ public class Monday extends Activity implements
 
     //ts5
 
-    private void updateTextLabel5(){
+   /* private void updateTextLabel5(){
         int hours = dateTime.get(dateTime.HOUR_OF_DAY);
         int mins = dateTime.get(dateTime.MINUTE);
         if(hours<10 && mins<10)
@@ -623,7 +645,7 @@ public class Monday extends Activity implements
             updateTextLabel8();
 
         }
-    };
+    };*/
 
 
 
@@ -634,17 +656,25 @@ public class Monday extends Activity implements
         int mins = dateTime.get(dateTime.MINUTE);
         if(hours<10 && mins<10)
         {
+            time_endx2 = ("0"+hours+":"+"0"+mins + ":00");
             te2.setText("0"+hours+":"+"0"+mins);
         }
         else if (hours<10 && mins>10)
         {
+            time_endx2 = ("0"+hours+":"+mins + ":00");
             te2.setText("0"+hours+":"+mins);
         }
         else if(hours>10 && mins<10){
+            time_endx2 = (hours+":"+"0"+mins + ":00");
             te2.setText(hours+":"+"0"+mins);
         }
-        else
-            te2.setText(hours+":"+mins);
+        else {
+            time_endx2 = (hours + ":" + mins + ":00");
+            te2.setText(hours + ":" + mins);
+        }
+        InsertIntoTable(email_holder, "Monday", label, time_startx2, time_endx2, HttpUrl);
+        //Toast.makeText(Monday.this, "data inserted ",
+            //    Toast.LENGTH_LONG).show();
 
 
 
@@ -691,9 +721,11 @@ public class Monday extends Activity implements
             te1.setText(hours + ":" + mins);
         }
 
-        //InsertIntoTable(time_startx1,time_endx1);
 
-        InsertIntoTable(email_holder,day_holder,label,time_startx1,time_endx1);
+        InsertIntoTable(email_holder, "Monday", label, time_startx1, time_endx1, HttpUrl);
+        /*Toast.makeText(Monday.this, "data inserted ",
+                Toast.LENGTH_LONG).show();*/
+
 
     }
     private void updateTime9(){
@@ -706,6 +738,7 @@ public class Monday extends Activity implements
             dateTime.set(Calendar.HOUR_OF_DAY, hourOfDay);
             dateTime.set(Calendar.MINUTE, minute);
             updateTextLabel9();
+
             //InsertIntoTable(email_holder,day_holder,label,time_startx1,time_endx1);
             //InsertIntoTable(email_holder,day_holder,label,time_startx1,time_endx1);
 
@@ -725,19 +758,25 @@ public class Monday extends Activity implements
         int mins = dateTime.get(dateTime.MINUTE);
         if(hours<10 && mins<10)
         {
+            time_endx3 = ("0"+hours+":"+"0"+mins + ":00");
             te3.setText("0"+hours+":"+"0"+mins);
         }
         else if (hours<10 && mins>10)
         {
+            time_endx3 = ("0"+hours+":"+mins + ":00");
             te3.setText("0"+hours+":"+mins);
         }
         else if(hours>10 && mins<10){
+            time_endx3 = (hours+":"+"0"+mins + ":00");
             te3.setText(hours+":"+"0"+mins);
         }
-        else
-            te3.setText(hours+":"+mins);
-
-
+        else {
+            time_endx3 = (hours + ":" + mins + ":00");
+            te3.setText(hours + ":" + mins);
+        }
+        InsertIntoTable(email_holder, "Monday", label, time_startx3, time_endx3, HttpUrl);
+        /*Toast.makeText(Monday.this, "data inserted ",
+                Toast.LENGTH_LONG).show();*/
 
     }
     private void updateTime11(){
@@ -765,19 +804,26 @@ public class Monday extends Activity implements
         int mins = dateTime.get(dateTime.MINUTE);
         if(hours<10 && mins<10)
         {
+            time_endx4 = ("0"+hours+":"+"0"+mins + ":00");
             te4.setText("0"+hours+":"+"0"+mins);
         }
         else if (hours<10 && mins>10)
         {
+            time_endx4 = ("0"+hours+":"+mins + ":00");
             te4.setText("0"+hours+":"+mins);
         }
         else if(hours>10 && mins<10){
+            time_endx4 = (hours+":"+"0"+mins + ":00");
             te4.setText(hours+":"+"0"+mins);
         }
-        else
-            te4.setText(hours+":"+mins);
+        else {
+            time_endx4 = (hours + ":" + mins + ":00");
+            te4.setText(hours + ":" + mins);
 
-
+        }
+        InsertIntoTable(email_holder, "Monday", label, time_startx4, time_endx4, HttpUrl);
+       /* Toast.makeText(Monday.this, "data inserted ",
+                Toast.LENGTH_LONG).show();*/
 
     }
     private void updateTime12(){
@@ -799,7 +845,7 @@ public class Monday extends Activity implements
 
     //te5
 
-    private void updateTextLabel13(){
+    /*private void updateTextLabel13(){
         int hours = dateTime.get(dateTime.HOUR_OF_DAY);
         int mins = dateTime.get(dateTime.MINUTE);
         if(hours<10 && mins<10)
@@ -946,19 +992,19 @@ public class Monday extends Activity implements
             updateTextLabel16();
 
         }
-    };
+    };*/
 
 
 
 
 
-    public void InsertIntoTable(final String Email,final String Day,final String Subject,final String Time_Start, final String Time_End){
+    public void InsertIntoTable(final String Email,final String Day,final String Subject,final String Time_Start, final String Time_End,final String url4webService){
         class InsertIntoTableClass extends AsyncTask<String,Void,String > {
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
 
-                progressDialog = ProgressDialog.show(Monday.this,"Loading Data",null,true,true);
+                //progressDialog = ProgressDialog.show(Monday.this,"Loading Data",null,true,true);
             }
 
             @Override
@@ -966,9 +1012,15 @@ public class Monday extends Activity implements
 
                 super.onPostExecute(httpResponseMsg);
 
-                progressDialog.dismiss();
+                //progressDialog.dismiss();
+                if(httpResponseMsg=="") {
 
-              //  Toast.makeText(Monday.this,httpResponseMsg.toString(), Toast.LENGTH_LONG).show();
+                }
+else{Toast.makeText(Monday.this,httpResponseMsg.toString(), Toast.LENGTH_LONG).show();
+
+                }
+
+             // Toast.makeText(Monday.this,httpResponseMsg.toString(), Toast.LENGTH_LONG).show();
 
 
             }
@@ -988,15 +1040,15 @@ public class Monday extends Activity implements
 
 
 
-                FinalResult = httpParse.postRequest(hashMap1, HttpUrl);
+                FinalResult = httpParse.postRequest(hashMap1, url4webService);
 
                 return FinalResult;
             }
         }
 
-        InsertIntoTableClass insertIntoTableClasss = new InsertIntoTableClass();
+        InsertIntoTableClass insertIntoTableClass = new InsertIntoTableClass();
 
-       insertIntoTableClasss.execute(email_holder,day_holder,label,time_startx1,time_endx1);
+       insertIntoTableClass.execute(Email,Day,Subject,Time_Start,Time_End,url4webService);
     }
 
 

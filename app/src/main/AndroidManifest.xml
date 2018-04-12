@@ -18,7 +18,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LauncherActivity">
+        <activity android:name=".Wednesday">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -30,7 +30,7 @@
         <activity android:name=".login_faculty" />
         <activity android:name=".register_faculty" />
         <activity android:name=".gLoginActivity" />
-        <activity android:name=".SignUpG" />
+        <activity android:name=".LauncherActivity" />
         <activity android:name=".gLoginScreenActivity" />
         <activity android:name=".MainActivity" />
         <!--
@@ -43,7 +43,7 @@
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="@string/google_maps_key" />
+            android:value="AIzaSyDL6xBkphKNsNuKjC36s8HpkepowgITgDU" />
 
         <activity android:name=".EnterTimeTableG" />
         <activity android:name=".NumberOfSubjects" />
@@ -56,12 +56,12 @@
         <activity android:name=".showAttendance" />
         <activity android:name=".enterDetailsG" />
         <activity android:name=".Tuesday" />
-        <activity android:name=".Wednesday" />
+        <activity android:name=".SignUpG" />
         <activity android:name=".Thursday" />
         <activity android:name=".Friday" />
         <activity
-            android:name=".MapsActivity"
-            android:label="@string/title_activity_maps" />
+            android:name=".MapsActivity"/>
+
         <activity android:name=".showAttendanceG"></activity>
 
         <service android:name=".AttendanceCalculationService"/>

@@ -1,6 +1,9 @@
 package com.aptech.asmanjas.virtualattendancetracker;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -23,12 +26,15 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
+import java.util.Date;
+import 	java.text.SimpleDateFormat;
 
 public class mainModuleG extends AppCompatActivity {
 
     String email_holder;
     String abc="",subject ="DSA";
     String student_name;
+    String firstClassTime,time,lastClassTime;
 
     HttpParse httpParse = new HttpParse();
     ArrayList<Integer> mUserItems = new ArrayList<>();
@@ -44,6 +50,19 @@ public class mainModuleG extends AppCompatActivity {
     public int[] idata,idata2,idata1,data2,data1;
     int total_attendance_sum =0;
     int total_classes_sum = 0;
+
+
+    //getting the current day
+    SimpleDateFormat sdf = new SimpleDateFormat("EEEE");
+    Date d = new Date();
+    String dayOfTheWeek = sdf.format(d);
+
+
+    //url for starting the service at specific time
+
+    String urlForStartTime  = "http://192.168.0.102/VirtualAttendanceTracker/G/AccessStartTimeOfService.php";
+
+   String urlForEndTime = "http://192.168.0.102/VirtualAttendanceTracker/G/AccessEndTimeForService.php";
 
     String url1 = "http://192.168.0.102/VirtualAttendanceTracker/G/AccessStudentDetailsG.php";
 
@@ -65,11 +84,12 @@ public class mainModuleG extends AppCompatActivity {
         email_holder = intent2.getStringExtra(gLoginScreenActivity.user_email);
         student_email_tx.setText(email_holder);
 
-        Intent x = new Intent(getApplicationContext(),AttendanceCalculationService.class);
-        x.putExtra("email_id",email_holder);
 
-        startService(x);
+
         //startService(x);
+        //startService(x);
+
+
 
 
 
@@ -79,6 +99,17 @@ public class mainModuleG extends AppCompatActivity {
         accessStudentDetailsforDisplay(email_holder,subject,url1);
         getStudentDetailsforDialogBox(email_holder,url2);
         studentattendancepercent(email_holder,url3);
+        getStartTimeForService(email_holder,dayOfTheWeek,urlForStartTime);
+        getEndTimeForService(email_holder,dayOfTheWeek,urlForEndTime);
+
+
+
+
+
+        //student_name_tx.setText(firstClassTime);
+
+
+
 
 
         mOrder.setOnClickListener(new View.OnClickListener() {
@@ -207,6 +238,107 @@ public class mainModuleG extends AppCompatActivity {
 
 
 
+
+
+
+   public void getStartTimeForService(final String email_h,final String day,final String urlForStartTime) {
+
+        class accessStartTimeForServiceclass extends AsyncTask<String, Void, String> {
+
+            @Override
+            protected void onPreExecute() {
+
+                super.onPreExecute();
+            }
+
+
+            @Override
+            protected void onPostExecute(String a) {
+                super.onPostExecute(a);
+                Toast.makeText(getApplicationContext(), a, Toast.LENGTH_SHORT).show();
+                try {
+                    getStartTime(a);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            protected String doInBackground(String... params) {
+                try {
+
+                    hashMap.put("email",params[0]);
+                    hashMap.put("day",params[1]);
+                    abc =httpParse.postRequest(hashMap, urlForStartTime);
+
+                    URL url = new URL(urlForStartTime);
+                    HttpURLConnection con = (HttpURLConnection) url.openConnection();
+                    StringBuilder sb = new StringBuilder();
+                    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(con.getInputStream()));
+                    String json;
+                    while ((json = bufferedReader.readLine()) != null) {
+
+                        sb.append(json + "\n");
+
+                    }
+                    return abc;
+
+                } catch (Exception e) {
+                    return null;
+                }
+            }
+        }
+        accessStartTimeForServiceclass getJSON = new accessStartTimeForServiceclass();
+        getJSON.execute(email_h,day,urlForStartTime);
+    }
+    public void getStartTime(String json1) throws JSONException {
+        JSONArray jsonArray = new JSONArray(json1);
+        //String ak[] = new String[jsonArray.length()];
+        for (int i = 0; i < jsonArray.length(); i++) {
+            JSONObject obj = jsonArray.getJSONObject(i);
+
+
+            firstClassTime = obj.getString("min(Time_Start)");
+            //student_name_tx.setText(firstClassTime);
+            //student_name_tx.setText(firstClassTime);
+            //for calling the start service
+
+            String hour,minute;
+            int hr,min;
+            hour = firstClassTime.substring(0,2);
+            minute = firstClassTime.substring(3,5);
+            hr = Integer.parseInt(hour);
+            min = Integer.parseInt(minute);
+            int k = hr*60 + min;
+
+            //getting the class start time
+           // student_name_tx.setText(String.valueOf(hr) + " " + String.valueOf(min));
+            //student_name_tx.setText(String.valueOf(k));
+            Intent x = new Intent(getApplicationContext(),AttendanceCalculationService.class);
+            x.putExtra("email_id1",email_holder);
+            x.putExtra("first_class_time",firstClassTime);
+         startService(x);
+
+            //student_name_tx.setText(firstClassTime);
+            /*Calendar calendarx = Calendar.getInstance();
+            calendarx.set(Calendar.HOUR_OF_DAY,hr );
+            calendarx.set(Calendar.MINUTE, min);
+            calendarx.set(Calendar.SECOND, 0);
+            PendingIntent pi = PendingIntent.getService(this, 0,
+                    new Intent(this, AttendanceCalculationService.class),PendingIntent.FLAG_UPDATE_CURRENT);
+
+            AlarmManager am = (AlarmManager)getSystemService(Context.ALARM_SERVICE);
+            am.setRepeating(AlarmManager.RTC_WAKEUP, calendarx.getTimeInMillis(),
+                    AlarmManager.INTERVAL_DAY, pi);*/
+
+        }
+
+
+
+    }
+
+
+
     private void accessStudentDetailsforDisplay(final String email_h,final String subject,final String urlwebservice) {
 
         class accessStudentDetailsforDisplayClass extends AsyncTask<String, Void, String> {
@@ -265,8 +397,7 @@ public class mainModuleG extends AppCompatActivity {
 
 
             student_name = obj.getString("first_name") + " " + obj.getString("last_name");
-
-            student_name_tx.setText(student_name);
+           student_name_tx.setText(student_name);
 
         }
 
@@ -348,6 +479,107 @@ public class mainModuleG extends AppCompatActivity {
         Attendance_percent_tx.setText(String.valueOf(attendance_percent + " %"));
 
 
+
+
+
+    }
+
+
+
+
+
+
+
+
+    private void getEndTimeForService(final String email_h,final String day,final String urlForEndTime) {
+
+        class accessEndTimeForServiceClass extends AsyncTask<String, Void, String> {
+
+            @Override
+            protected void onPreExecute() {
+
+                super.onPreExecute();
+            }
+
+
+            @Override
+            protected void onPostExecute(String a) {
+                super.onPostExecute(a);
+                Toast.makeText(getApplicationContext(), a, Toast.LENGTH_SHORT).show();
+                try {
+                    getEndTime(a);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            protected String doInBackground(String... params) {
+                try {
+
+                    hashMap.put("email",params[0]);
+                    hashMap.put("day",params[1]);
+                    abc =httpParse.postRequest(hashMap, urlForEndTime);
+
+                    URL url = new URL(urlForEndTime);
+                    HttpURLConnection con = (HttpURLConnection) url.openConnection();
+                    StringBuilder sb = new StringBuilder();
+                    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(con.getInputStream()));
+                    String json;
+                    while ((json = bufferedReader.readLine()) != null) {
+
+                        sb.append(json + "\n");
+
+                    }
+                    return abc;
+
+                } catch (Exception e) {
+                    return null;
+                }
+            }
+        }
+        accessEndTimeForServiceClass getJSON = new accessEndTimeForServiceClass();
+        getJSON.execute(email_h,day,urlForEndTime);
+    }
+    private void getEndTime(String json1) throws JSONException {
+        JSONArray jsonArray = new JSONArray(json1);
+        String ak[] = new String[jsonArray.length()];
+        for (int i = 0; i < jsonArray.length(); i++) {
+            JSONObject obj = jsonArray.getJSONObject(i);
+
+
+            lastClassTime = obj.getString("max(Time_End)");
+
+            //for calling the start service
+            int pp  = ((Integer.parseInt(lastClassTime.substring(0,2)))*60) + (Integer.parseInt(lastClassTime.substring(3,5)));
+            //student_name_tx.setText(String.valueOf(pp));
+           /* String hour,minute;
+            int hr,min;
+            hour = lastClassTime.substring(0,2);
+            minute = lastClassTime.substring(3,5);
+            hr = Integer.parseInt(hour);
+            min = Integer.parseInt(minute);
+            //student_name_tx.setText(String.valueOf(hr) + " " + String.valueOf(min));*/
+
+
+            //student_name_tx.setText(firstClassTime);
+          /* Calendar calendarx = Calendar.getInstance();
+            calendarx.set(Calendar.HOUR_OF_DAY,16 );
+            calendarx.set(Calendar.MINUTE, 23);
+            calendarx.set(Calendar.SECOND, 0);*/
+            /*PendingIntent pi = PendingIntent.getService(this, 0,
+                    new Intent(this, AttendanceCalculationService.class),PendingIntent.FLAG_UPDATE_CURRENT);
+            AlarmManager am = (AlarmManager)getSystemService(Context.ALARM_SERVICE);
+            am.cancel(pi);*/
+
+            /*Intent intent = new Intent(this, AttendanceCalculationService.class);
+            PendingIntent sender = PendingIntent.getBroadcast(this,
+                    0, intent, 0);
+            AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+
+            alarmManager.cancel(sender);*/
+
+        }
 
 
 
