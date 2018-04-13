@@ -6,13 +6,24 @@
     android:layout_height="match_parent"
     tools:context=".showAttendance"
     android:orientation="vertical"
-    android:background="@drawable/gbackground">
+    android:background="@color/colorPrimaryDark">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:fontFamily="@font/merienda"
+        android:padding="35dp"
+        android:text="Detailed attendance statistics"
+        android:textAlignment="textStart"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
 
     <ViewStub
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="80dp"
         android:id="@+id/stublist"
         android:inflatedId="@+id/showlayout"
         android:layout="@layout/frame"/>

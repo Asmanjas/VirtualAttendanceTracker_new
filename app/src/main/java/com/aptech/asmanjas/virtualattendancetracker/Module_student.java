@@ -57,9 +57,9 @@ followMe = (Button)findViewById(R.id.follow_me_module_student);
 
 
 
-        String url =  "http://10.50.33.206/VirtualAttendanceTracker/AccessStudentDetails.php?Roll_Number=";
-        String url2 = "http://10.50.33.206/VirtualAttendanceTracker/AccessStudentDetailsForAttendancePercent.php?Roll_Number=";
-        String url3 = "http://10.50.33.206/VirtualAttendanceTracker/AccessStudentDetailsForAttendancePercent.php?Roll_Number=";
+        String url =  "http://192.168.0.102/VirtualAttendanceTracker/AccessStudentDetails.php?Roll_Number=";
+        String url2 = "http://192.168.0.102/VirtualAttendanceTracker/AccessStudentDetailsForAttendancePercent.php?Roll_Number=";
+        String url3 = "http://192.168.0.102/VirtualAttendanceTracker/AccessStudentDetailsForAttendancePercent.php?Roll_Number=";
 
         downloadJSON(roll_number_holder, url + roll_number_holder);
         downloadJSON1(roll_number_holder, url2 + roll_number_holder);
@@ -91,7 +91,7 @@ followMe = (Button)findViewById(R.id.follow_me_module_student);
             @Override
             protected void onPostExecute(String s) {
                 super.onPostExecute(s);
-                Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT).show();
                 try {
                     loadIntoListView(s);
                 } catch (JSONException e) {
@@ -188,7 +188,7 @@ followMe = (Button)findViewById(R.id.follow_me_module_student);
             @Override
             protected void onPostExecute(String s) {
                 super.onPostExecute(s);
-                Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT).show();
                 try {
                     loadIntoListView2(s);
                 } catch (JSONException e) {

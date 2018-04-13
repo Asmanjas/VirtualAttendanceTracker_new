@@ -17,20 +17,20 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/textview_shape"
-        android:hint="Subject Name"
+        android:hint="enter subject names one by one"
         android:inputType="textNoSuggestions"
         android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/button7"
+        app:layout_constraintBottom_toTopOf="@+id/button7_1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.9" />
+        app:layout_constraintTop_toBottomOf="@+id/text_view_subject_names_g"
+        app:layout_constraintVertical_bias="0.64" />
 
     <Button
         android:id="@+id/next_button"
         android:layout_width="158dp"
         android:layout_height="46dp"
-        android:layout_marginBottom="44dp"
+        android:layout_marginBottom="100dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:background="@drawable/shape_activity_main_buttons"
@@ -40,13 +40,14 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.459"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/button7_1"
         android:layout_width="158dp"
         android:layout_height="46dp"
-        android:layout_marginBottom="36dp"
+        android:layout_marginBottom="140dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:background="@drawable/shape_activity_main_buttons"
@@ -54,37 +55,37 @@
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/text_view_subject_names_g"
+        app:layout_constraintBottom_toTopOf="@+id/next_button"
         app:layout_constraintEnd_toStartOf="@+id/add_button_subject_name_g"
-        app:layout_constraintHorizontal_bias="0.522"
+        app:layout_constraintHorizontal_bias="0.412"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/add_button_subject_name_g"
         android:layout_width="158dp"
         android:layout_height="46dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="16dp"
         android:background="@drawable/shape_activity_main_buttons"
         android:text="add"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textStyle="bold"
-        app:layout_constraintBaseline_toBaselineOf="@+id/button7"
+        app:layout_constraintBaseline_toBaselineOf="@+id/button7_1"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/text_view_subject_names_g"
-        android:layout_width="299dp"
-        android:layout_height="157dp"
-        android:layout_marginBottom="28dp"
+        android:layout_width="284dp"
+        android:layout_height="106dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="120dp"
         android:background="@color/white"
         android:textColor="@color/colorPrimaryDark"
-        app:layout_constraintBottom_toTopOf="@+id/next_button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.507"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </android.support.constraint.ConstraintLayout>

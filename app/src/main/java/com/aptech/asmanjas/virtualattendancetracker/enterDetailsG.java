@@ -23,23 +23,24 @@ public class enterDetailsG extends AppCompatActivity {
 
     Button btn_subject_names,btn_done;
     HashMap<String,String> hashMap = new HashMap<>();
+    boolean clicked_classroom_location = false,enter_time_table = false;
 
     public final String email_holder_parse = "";
     String finalresult = "";
     HttpParse httpParse = new HttpParse();
-    String url = "http://10.50.33.206/VirtualAttendanceTracker/G/insertLocation.php";
+    String url = "http://192.168.0.102/VirtualAttendanceTracker/G/insertLocation.php";
     String email_holder,first_name_holder,last_name_holder,password_holder;
 
     /*placePicker start here*/
 
     int PLACE_PICKER_REQUEST = 1;
-    TextView tvPlace;
+    //TextView tvPlace;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_enter_details_g);
-        tvPlace = (TextView)findViewById(R.id.tvPlace);
+        //tvPlace = (TextView)findViewById(R.id.tvPlace);
         btn_subject_names = (Button)findViewById(R.id.enter_subject_names_enterDetailsG);
         Intent q = getIntent();
         email_holder = q.getStringExtra("user_email");
@@ -59,14 +60,21 @@ public class enterDetailsG extends AppCompatActivity {
             a.putExtra("last_namex",last_name_holder);
             a.putExtra("passwordx",password_holder);
             startActivity(a);
+            enter_time_table = true;
         }
     });
 btn_done.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
-        Intent k = new Intent(enterDetailsG.this,gLoginScreenActivity.class);
+        if(clicked_classroom_location && enter_time_table)
+        {
 
-        startActivity(k);
+        }
+        else {
+            Intent k = new Intent(enterDetailsG.this, gLoginScreenActivity.class);
+
+            startActivity(k);
+        }
     }
 });
 
@@ -74,6 +82,7 @@ btn_done.setOnClickListener(new View.OnClickListener() {
 
 
     public void goPlacePicker(View view){
+        clicked_classroom_location = true;
         //this is the place to call the picker function
         PlacePicker.IntentBuilder builder = new PlacePicker.IntentBuilder();
         try {
@@ -100,7 +109,7 @@ btn_done.setOnClickListener(new View.OnClickListener() {
                 longitude_s = String.valueOf(longitude);
                 String lattitude_s = String.valueOf(latitude);
                 insertLocation(email_holder,longitude_s,lattitude_s,url);
-                tvPlace.setText(latitude + ","  + longitude);
+               // tvPlace.setText(latitude + ","  + longitude);
             }
         }
 

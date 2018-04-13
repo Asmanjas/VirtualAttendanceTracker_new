@@ -21,11 +21,11 @@ public class login_faculty extends AppCompatActivity {
 
 
     EditText ClassName,Faculty_name,Faculty_password;
-    Button login,register;
+    Button login,back;
     String Class_Name_Holder,Faculty_Name_Holder,Faculty_Password_Holder;
     String FinalResult;
     Boolean CheckEditText ;
-    String HttpURL = "http://10.50.33.206/VirtualAttendanceTracker/FacultyLogin.php";
+    String HttpURL = "http://192.168.0.102/VirtualAttendanceTracker/FacultyLogin.php";
     ProgressDialog progressDialog;
     HashMap<String,String> hashMap = new HashMap<>();
     HttpParse httpParse = new HttpParse();
@@ -40,14 +40,14 @@ public class login_faculty extends AppCompatActivity {
         Faculty_name = (EditText)findViewById(R.id.faculty_name_login_faculty);
         Faculty_password = (EditText)findViewById(R.id.faculty_password_login_faculty);
         login = (Button)findViewById(R.id.login_button_login_faculty);
-        register=(Button)findViewById(R.id.register_button_login_faculty);
+        back=(Button)findViewById(R.id.back_button_login_faculty);
 
 
 
-        register.setOnClickListener(new View.OnClickListener() {
+        back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(login_faculty.this,register_faculty.class);
+                Intent intent = new Intent(login_faculty.this,MainActivity.class);
                 startActivity(intent);
             }
         });

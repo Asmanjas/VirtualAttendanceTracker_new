@@ -206,11 +206,8 @@
         android:background="@color/green"
         android:orientation="vertical"
         android:padding="25dp"
-        android:text="Monday"
         android:textAlignment="viewStart"
         android:textColor="@color/white"
-        android:textSize="30sp"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -222,8 +219,9 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="12dp"
             android:layout_marginTop="18dp"
-            android:fontFamily="@font/merienda"
+
             android:text="Monday"
+            android:fontFamily="@font/merienda"
             android:textColor="@color/white"
             android:textSize="35sp"
 

@@ -30,12 +30,14 @@ import java.util.List;
 public class subjectNameG extends Activity /*implements
         OnItemSelectedListener */{
 
-    Button btnAdd,btndone;
+    Button btnAdd,btndone,resetbtn;
     TextView tx_subject_names;
     List<String> subject_names = new ArrayList<String>();
     HashMap<String,String> hashMap = new HashMap<>();
     String abc = "";
+
     HttpParse httpParse = new HttpParse();
+    String xyz;
     String FinalResult = "";
     String email_holder,first_name_holder,last_name_holder,password_holder,repassword_holder;
 
@@ -45,7 +47,7 @@ public class subjectNameG extends Activity /*implements
     public final String further_parsed_email = "";
     int i=0;
    // String url4dbAccess = "http://192.168.0.102/VirtualAttendanceTracker/G/AccessStudentDetailsFromTEMPdb.php";
-    String getUrl4dbInsert = "http://10.50.33.206/VirtualAttendanceTracker/G/InsertStudentDetails.php";
+    String getUrl4dbInsert = "http://192.168.0.102/VirtualAttendanceTracker/G/InsertStudentDetails.php";
    // String HttpUrl = "http://192.168.0.102/VirtualAttendanceTracker/G/gSignUp.php";
 
 
@@ -60,7 +62,9 @@ public class subjectNameG extends Activity /*implements
         first_name_holder = x.getStringExtra("first_namex");
         last_name_holder = x.getStringExtra("last_namex");
         password_holder = x.getStringExtra("passwordx");
+
         //tx_subject_names.setText(email_holder + "is awesome");
+        resetbtn = (Button)findViewById(R.id.button7_1);
 
         btnAdd = (Button) findViewById(R.id.add_button_subject_name_g);
         btndone = (Button)findViewById(R.id.next_button);
@@ -68,8 +72,13 @@ public class subjectNameG extends Activity /*implements
         inputLabel = (EditText) findViewById(R.id.subject_name_g_edittext);
 
 
-        //getDataFromTempDATABASE(parsed_email_holder,url4dbAccess);
-        //tx_subject_names.setText(password);
+      resetbtn.setOnClickListener(new View.OnClickListener() {
+          @Override
+          public void onClick(View v) {
+              subject_names.clear();
+              tx_subject_names.setText("");
+          }
+      });
 
 
         btnAdd.setOnClickListener(new View.OnClickListener() {
@@ -81,7 +90,15 @@ public class subjectNameG extends Activity /*implements
                // tx_subject_names.setText(label);
                 if (label.trim().length() > 0) {
 
+
                     subject_names.add(label);
+                    xyz = "";
+                    for(i=0;i < subject_names.size();i++){
+                        xyz = xyz + "  " + subject_names.get(i);
+                        //tx_subject_names.setText( subject_names.get(i) + " , ");
+
+                    }
+                    tx_subject_names.setText(xyz);
 
                     // database handler
                     SQLiteDatabaseHandler db = new SQLiteDatabaseHandler(

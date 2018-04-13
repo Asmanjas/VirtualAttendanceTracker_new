@@ -36,6 +36,7 @@ public class mainModuleG extends AppCompatActivity {
     String student_name;
     String firstClassTime,time,lastClassTime;
 
+
     HttpParse httpParse = new HttpParse();
     ArrayList<Integer> mUserItems = new ArrayList<>();
     HashMap<String,String> hashMap = new HashMap<>();
@@ -60,14 +61,14 @@ public class mainModuleG extends AppCompatActivity {
 
     //url for starting the service at specific time
 
-    String urlForStartTime  = "http://10.50.33.206/VirtualAttendanceTracker/G/AccessStartTimeOfService.php";
+    String urlForStartTime  = "http://192.168.0.102/VirtualAttendanceTracker/G/AccessStartTimeOfService.php";
 
-   String urlForEndTime = "http://10.50.33.206/VirtualAttendanceTracker/G/AccessEndTimeForService.php";
+   String urlForEndTime = "http://192.168.0.102/VirtualAttendanceTracker/G/AccessEndTimeForService.php";
 
-    String url1 = "http://10.50.33.206/VirtualAttendanceTracker/G/AccessStudentDetailsG.php";
+    String url1 = "http://192.168.0.102/VirtualAttendanceTracker/G/AccessStudentDetailsG.php";
 
-    String url2 = "http://10.50.33.206/VirtualAttendanceTracker/G/AccessStudentDetailsGG.php";
-    String url3 = "http://10.50.33.206/VirtualAttendanceTracker/G/AccessStudentDetailsForAttendancePercentG.php";
+    String url2 = "http://192.168.0.102/VirtualAttendanceTracker/G/AccessStudentDetailsGG.php";
+    String url3 = "http://192.168.0.102/VirtualAttendanceTracker/G/AccessStudentDetailsForAttendancePercentG.php";
 
 
 
@@ -116,7 +117,7 @@ public class mainModuleG extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 AlertDialog.Builder mBuilder = new AlertDialog.Builder(mainModuleG.this);
-                mBuilder.setTitle(R.string.dialog_title);
+                mBuilder.setTitle(R.string.dialog_titleg);
                 boolean[] checkItems;
                 mBuilder.setMultiChoiceItems(listItems, checkedItems, new DialogInterface.OnMultiChoiceClickListener() {
 
@@ -152,16 +153,6 @@ public class mainModuleG extends AppCompatActivity {
                     }
                 });
 
-                mBuilder.setNeutralButton(R.string.clear_all_label, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        for (i = 0; i < checkedItems.length; i++) {
-                            checkedItems[i] = false;
-                            mUserItems.clear();
-                            mItemSelected.setText("");
-                        }
-                    }
-                });
                 AlertDialog mDialog = mBuilder.create();
                 mDialog.show();
             }
@@ -317,7 +308,7 @@ public class mainModuleG extends AppCompatActivity {
             Intent x = new Intent(getApplicationContext(),AttendanceCalculationService.class);
             x.putExtra("email_id1",email_holder);
             x.putExtra("first_class_time",firstClassTime);
-         startService(x);
+         //startService(x);
 
             //student_name_tx.setText(firstClassTime);
             /*Calendar calendarx = Calendar.getInstance();

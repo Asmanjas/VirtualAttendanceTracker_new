@@ -19,7 +19,7 @@ public class gLoginScreenActivity extends AppCompatActivity {
     Button getLogIn,getSignUp;
     String email_holder,password_holder;
     String final_result;
-    String HttpURL = "http://10.50.33.206/VirtualAttendanceTracker/G/gLogin.php";
+    String HttpURL = "http://192.168.0.102/VirtualAttendanceTracker/G/gLogin.php";
     Boolean CheckEditText;
     ProgressDialog progressDialog;
     HashMap<String,String> hashMap = new HashMap<>();

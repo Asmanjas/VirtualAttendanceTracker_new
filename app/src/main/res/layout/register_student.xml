@@ -14,12 +14,13 @@
         android:layout_height="wrap_content"
         android:background="@color/colorPrimaryDark"
         android:orientation="vertical"
-        android:padding="30dp">
+        android:padding="60dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Register/LogIn"
+            android:fontFamily="@font/merienda"
             android:textColor="#fff"
             android:textSize="25dp"
             android:textStyle="bold" />
@@ -39,38 +40,42 @@
             android:id="@+id/first_name_register_student"
             android:layout_width="296dp"
             android:layout_height="wrap_content"
-            android:hint="First_Name" />
+            android:hint="FIRST NAME"
+            android:inputType="text" />
 
         <EditText
             android:id="@+id/last_name_register_student"
             android:layout_width="296dp"
             android:layout_height="wrap_content"
-            android:hint="Last_Name" />
+            android:hint="LAST NAME"
+            android:inputType="text" />
 
         <EditText
             android:id="@+id/roll_number_register_student"
             android:layout_width="296dp"
             android:layout_height="wrap_content"
-            android:hint="ROLL NUMBER" />
+            android:hint="ROLL NUMBER [174CA***]" />
 
         <EditText
             android:id="@+id/password_register_student"
             android:layout_width="296dp"
             android:layout_height="wrap_content"
-            android:hint="PASSWORD" />
+            android:hint="PASSWORD"
+            android:inputType="textPassword" />
 
         <EditText
             android:id="@+id/retype_password_register_student"
             android:layout_width="294dp"
             android:layout_height="wrap_content"
-            android:hint="RE-TYPE PASSWORD" />
+            android:hint="RE-TYPE PASSWORD"
+            android:inputType="textPassword" />
 
         <Button
             android:id="@+id/register_button_register_student"
             android:layout_width="158dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:background="@drawable/buttondone"
+            android:background="@drawable/shape_activity_main_buttons"
             android:text="REGISTER"
             android:textColor="#fff"
             android:textSize="18dp" />
@@ -105,7 +110,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:background="@drawable/buttondone"
+            android:background="@drawable/shape_activity_main_buttons"
             android:text="log in"
             android:textColor="#fff"
             android:textSize="18sp" />

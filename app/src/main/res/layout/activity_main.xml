@@ -1,77 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
 
+    <LinearLayout
 
-        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:background="@color/colorPrimaryDark"
+        android:orientation="vertical"
+        android:padding="25dp"
+        >
+
+        <TextView
+            android:layout_width="234dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/merienda"
+            android:text="Welcome"
+            android:textAlignment="textStart"
+            android:textColor="#fff"
+            android:textSize="30sp" />
+
+        <TextView
+            android:layout_width="305dp"
+            android:layout_height="39dp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/merienda"
+            android:text="to Student + Faculty mode"
+            android:textAlignment="viewStart"
+            android:textColor="#fff"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:gravity="center"
         android:orientation="vertical"
-    tools:context="com.aptech.asmanjas.virtualattendancetracker.MainActivity">
 
-        <LinearLayout
+        >
+
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/reading"
-            android:gravity="bottom"
-            android:orientation="vertical"
-            android:padding="15dp">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:fontFamily="cursive"
-                android:text="Hi, Welcome to Virtual Attendence Tracker "
-                android:textColor="#fff"
-                android:textSize="50dp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:fontFamily="cursive"
-                android:text="something about our app details or description"
-                android:textColor="#fff"
-
-                android:textSize="30dp" />
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="25dp"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/button_student_login"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="15dp"
-
-                    android:background="@drawable/shape_activity_main_buttons"
-                    android:text="STUDENT"
-                    android:textColor="#fff"
-
-                    android:textSize="15dp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/button_faculty_login"
-                    android:layout_width="wrap_content"
-
-                    android:layout_height="wrap_content"
-
-                    android:layout_margin="15dp"
-                    android:background="@drawable/shape_activity_main_buttons"
+            android:padding="25dp"
+            android:text="This mode tracks the attendance of the students of class and the data gathered from this mode can be used for official purposes."
+            android:textAlignment="viewStart"
+            android:textSize="16sp" />
 
 
-                    android:text="FACULTY"
-                    android:textAlignment="center"
-                    android:textColor="#fff"
-                    android:textSize="15dp"
-                    android:textStyle="bold" />
 
-            </LinearLayout>
+        <LinearLayout
+            android:layout_margin="40dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+
+
+            >
+
+
+            <Button
+                android:id="@+id/button_student_login"
+                android:layout_width="129dp"
+                android:layout_height="76dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/button_style_new"
+
+                android:text="student"
+                android:textAlignment="center"
+                android:textColor="#fff" />
+
+            <Button
+                android:id="@+id/button_faculty_login"
+                android:layout_width="134dp"
+                android:layout_height="75dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/button_style_new"
+
+                android:text="Faculty"
+                android:textColor="#fff" />
+
+
         </LinearLayout>
     </LinearLayout>
+
+    </LinearLayout>
+

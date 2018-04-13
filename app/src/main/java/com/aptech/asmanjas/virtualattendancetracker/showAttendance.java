@@ -46,7 +46,7 @@ public class showAttendance extends AppCompatActivity {
     String roll_number_x;
     HashMap<String,String> hashMap = new HashMap<>();
     HttpParse httpParse = new HttpParse();
-    String abc = "";
+    String abc = "  ";
     float attendance_percent;
 
     public String[] data,datax;
@@ -128,7 +128,7 @@ for(int i = 0 ;i<2;i++)
             @Override
             protected void onPostExecute(String s) {
                 super.onPostExecute(s);
-                Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT).show();
                 try {
                     loadIntoListView2(s);
                 } catch (JSONException e) {
@@ -140,26 +140,8 @@ for(int i = 0 ;i<2;i++)
             protected String doInBackground(String... params) {
                 try {
 
-                    //my code
-
-                    //HttpClient httpclient = new DefaultHttpClient();
-                    //HttpPost httppost = new HttpPost("http://192.168.0.101/VirtualAttendanceTracker/G/AccessStudentDetailsG.php?email=" + email);
-                    //httpclient.execute(httppost);
-
-
-                    // hashMap.put("password",params[1]);
-
-                    //FinalResult =
                     hashMap.put("roll_number",params[0]);
                     abc =httpParse.postRequest(hashMap, url2);
-
-
-                    //return FinalResult;
-
-                    //httpParse.postRequest(hashMap, httpurl);
-
-
-                    //my code end
                     URL url = new URL(url2);
                     HttpURLConnection con = (HttpURLConnection) url.openConnection();
                     StringBuilder sb = new StringBuilder();

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-android:background="@drawable/gbackground"
+android:background="@drawable/reading"
     tools:context="com.aptech.asmanjas.virtualattendancetracker.LauncherActivity">
 
     <TextView
@@ -16,7 +16,6 @@ android:background="@drawable/gbackground"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:fontFamily="@font/merienda"
-        android:text="Hi , Welcome to Virtual Attendance Tracker"
         android:textColor="@color/white"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/sPlusp"
@@ -24,7 +23,7 @@ android:background="@drawable/gbackground"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.659" />
+        app:layout_constraintVertical_bias="0.48000002" />
 
     <Button
         android:id="@+id/s_only"
@@ -44,7 +43,7 @@ android:background="@drawable/gbackground"
         android:id="@+id/sPlusp"
         android:layout_width="309dp"
         android:layout_height="56dp"
-        android:layout_marginBottom="48dp"
+        android:layout_marginBottom="60dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:background="@drawable/shape_activity_main_buttons"

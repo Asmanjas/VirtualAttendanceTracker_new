@@ -23,7 +23,7 @@ public class register_student extends AppCompatActivity {
     EditText First_Name,Last_Name,Roll_Number,Password,RePassword;
     String F_Name_Holder,L_Name_Holder,Roll_Number_holder,Password_holder,RePassword_holder;
     String FinalResult,truncated_roll_number;
-    String HttpUrl = "http://10.50.33.206/VirtualAttendanceTracker/StudentRegistration.php";
+    String HttpUrl = "http://192.168.0.102/VirtualAttendanceTracker/StudentRegistration.php";
     Boolean CheckEditText;
     ProgressDialog progressDialog;
     HashMap<String,String> hashMap = new HashMap<>();
@@ -53,14 +53,15 @@ public class register_student extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 CheckEditTextIsEmptyOrNot();
-                truncated_roll_number = Roll_Number_holder.substring(Roll_Number_holder.length() - 3);
-                theory_Batch_holder = checkForTheoryBatch(truncated_roll_number);
-                lab_batch_holder = checkForLabBatch(truncated_roll_number);
 
 
 
 
                 if(CheckEditText)   {
+                    truncated_roll_number = Roll_Number_holder.substring(Roll_Number_holder.length() - 3);
+                    theory_Batch_holder = checkForTheoryBatch(truncated_roll_number);
+                    lab_batch_holder = checkForLabBatch(truncated_roll_number);
+
                     UserRegisterFunction(F_Name_Holder,L_Name_Holder,Roll_Number_holder,Password_holder,RePassword_holder,theory_Batch_holder,lab_batch_holder);
 
                 }
@@ -87,17 +88,9 @@ public class register_student extends AppCompatActivity {
 
         F_Name_Holder = First_Name.getText().toString();
         L_Name_Holder = Last_Name.getText().toString();
-
         Roll_Number_holder = Roll_Number.getText().toString();
         Password_holder = Password.getText().toString();
         RePassword_holder = RePassword.getText().toString();
-
-
-
-
-
-
-
 
         if(TextUtils.isEmpty(F_Name_Holder) ||TextUtils.isEmpty(L_Name_Holder) || TextUtils.isEmpty(Roll_Number_holder) || TextUtils.isEmpty(Password_holder) || TextUtils.isEmpty(RePassword_holder))
         {

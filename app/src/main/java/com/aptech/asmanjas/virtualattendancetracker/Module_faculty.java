@@ -48,9 +48,9 @@ public class Module_faculty extends AppCompatActivity {
     String[] SelectedItems;
 
     String faculty_name_holder;
-    String url = "http://10.50.33.206/VirtualAttendanceTracker/AccessFacultyDetails.php?FacultyName=";
-    String url2 = "http://10.50.33.206/VirtualAttendanceTracker/AccessStudentDetailsforAttendance.php?Subject=";
-    String url3 = "http://10.50.33.206/VirtualAttendanceTracker/UpdateAttendanceTable.php";
+    String url = "http://192.168.0.102/VirtualAttendanceTracker/AccessFacultyDetails.php?FacultyName=";
+    String url2 = "http://192.168.0.102/VirtualAttendanceTracker/AccessStudentDetailsforAttendance.php?Subject=";
+    String url3 = "http://192.168.0.102/VirtualAttendanceTracker/UpdateAttendanceTable.php";
 
     @Override
     protected void  onCreate(Bundle savedInstanceState) {
@@ -139,7 +139,7 @@ public class Module_faculty extends AppCompatActivity {
 
 
 
-                      String item = "";
+                     String item = "";
                         for (int i=0; i<mUserItems.size(); i++) {
                             item = item + listItems[mUserItems.get(i)];
 
@@ -149,6 +149,9 @@ public class Module_faculty extends AppCompatActivity {
                         }
 
                         mItemSelected.setText(item);
+
+
+
 
                     }
                 });
@@ -192,7 +195,7 @@ public class Module_faculty extends AppCompatActivity {
             @Override
             protected void onPostExecute(String s) {
                 super.onPostExecute(s);
-                Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT).show();
                 try {
                     loadIntoView(s);
                 } catch (JSONException e) {
@@ -282,7 +285,7 @@ public class Module_faculty extends AppCompatActivity {
             @Override
             protected void onPostExecute(String s) {
                 super.onPostExecute(s);
-                Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT).show();
                 try {
                     loadIntoView2(s);
                 } catch (JSONException e) {
@@ -341,7 +344,7 @@ public class Module_faculty extends AppCompatActivity {
 
         for (int i = 0; i < jsonArray2.length(); i++) {
             JSONObject obj = jsonArray2.getJSONObject(i);
-            listItems[i] = obj.getString("Roll_Number") + " " + obj.getString("First_Name");
+            listItems[i] = obj.getString("Roll_Number") + "::" + obj.getString("First_Name");
 
 
         }

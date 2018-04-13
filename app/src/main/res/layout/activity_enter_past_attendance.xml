@@ -25,9 +25,9 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="24dp"
         android:background="@drawable/textview_shape"
-        android:clickable="true"
+
+        android:inputType="number"
         android:padding="8dp"
-        android:text="click here"
         android:textAlignment="center"
         android:textSize="14sp"
         app:layout_constraintStart_toEndOf="@+id/spinner1_past"
@@ -41,87 +41,14 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:background="@drawable/textview_shape"
+
+        android:inputType="number"
         android:padding="8dp"
-        android:text="click here"
         android:textAlignment="center"
         app:layout_constraintBaseline_toBaselineOf="@+id/time_start1_past"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/time_start1_past" />
 
-
-    <Spinner
-        android:id="@+id/spinner2_past"
-        android:layout_width="170dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="12dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner1_past" />
-
-    <EditText
-        android:id="@+id/time_start2_past"
-        android:layout_width="80dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="12dp"
-        android:background="@drawable/textview_shape"
-        android:padding="8dp"
-        android:text="TextView2"
-        android:textAlignment="center"
-        app:layout_constraintStart_toEndOf="@+id/spinner2_past"
-        app:layout_constraintTop_toBottomOf="@+id/time_start1_past" />
-
-    <EditText
-        android:id="@+id/time_end2_past"
-        android:layout_width="80dp"
-        android:layout_height="40dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:background="@drawable/textview_shape"
-        android:padding="8dp"
-        android:text="TextView2"
-        android:textAlignment="center"
-        app:layout_constraintBaseline_toBaselineOf="@+id/time_start2_past"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/time_start2_past" />
-
-
-    <Spinner
-        android:id="@+id/spinner3_past"
-        android:layout_width="170dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="12dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner2_past" />
-
-    <EditText
-        android:id="@+id/time_start3_past"
-        android:layout_width="80dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="12dp"
-        android:background="@drawable/textview_shape"
-        android:padding="8dp"
-        android:text="TextView3"
-        android:textAlignment="center"
-        app:layout_constraintStart_toEndOf="@+id/spinner3_past"
-        app:layout_constraintTop_toBottomOf="@+id/time_start2_past" />
-
-    <EditText
-        android:id="@+id/time_end3_past"
-        android:layout_width="80dp"
-        android:layout_height="40dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:background="@drawable/textview_shape"
-        android:padding="8dp"
-        android:text="TextView3"
-        android:textAlignment="center"
-        app:layout_constraintBaseline_toBaselineOf="@+id/time_start3_past"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/time_start3_past" />
 
     <TextView
         android:id="@+id/titleBar"
@@ -129,6 +56,7 @@
         android:layout_height="35dp"
 
         android:layout_marginTop="50dp"
+
         android:text="Subject Name"
         android:textAlignment="center"
         android:textSize="14sp"
@@ -140,13 +68,15 @@
         android:id="@+id/titleBar3"
         android:layout_width="80dp"
         android:layout_height="35dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
 
+        android:layout_marginStart="8dp"
         android:text="Total classes"
         android:textAlignment="center"
         android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintBaseline_toBaselineOf="@+id/titleBar2"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/titleBar2" />
 
     <TextView
@@ -161,42 +91,6 @@
         android:textStyle="bold"
         app:layout_constraintBaseline_toBaselineOf="@+id/titleBar"
         app:layout_constraintStart_toEndOf="@+id/titleBar" />
-
-    <Spinner
-        android:id="@+id/spinner4_past"
-        android:layout_width="170dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="12dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner3_past" />
-
-    <EditText
-        android:padding="8dp"
-        android:background="@drawable/textview_shape"
-        android:id="@+id/time_start4_past"
-        android:layout_width="80dp"
-        android:layout_height="35dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="12dp"
-        android:text="TextView3"
-        android:textAlignment="center"
-        app:layout_constraintStart_toEndOf="@+id/spinner3_past"
-        app:layout_constraintTop_toBottomOf="@+id/time_start3_past" />
-
-    <EditText
-        android:padding="8dp"
-        android:background="@drawable/textview_shape"
-        android:id="@+id/time_end4_past"
-        android:layout_width="80dp"
-        android:layout_height="35dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:text="TextView3"
-        android:textAlignment="center"
-        app:layout_constraintBaseline_toBaselineOf="@+id/time_start4_past"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/time_start4_past" />
 
 
     <LinearLayout
@@ -225,14 +119,14 @@
             android:fontFamily="@font/merienda"
             android:text="Update previous Attendance"
             android:textColor="@color/white"
-            android:textSize="20sp"
+            android:textSize="24sp"
 
 
             />
     </LinearLayout>
 
     <Button
-        android:id="@+id/next_button_upAttendance"
+        android:id="@+id/update1_btn_update_attemdance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -240,10 +134,24 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/shape_activity_main_buttons"
+        android:text="update"
+        app:layout_constraintBottom_toTopOf="@+id/next_button_upAttendance2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/time_start1_past"
+        app:layout_constraintVertical_bias="0.120000005" />
+
+    <Button
+        android:id="@+id/next_button_upAttendance2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="144dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/shape_activity_main_buttons"
         android:text="next"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner4_past"
-        app:layout_constraintVertical_bias="0.73" />
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
 </android.support.constraint.ConstraintLayout>

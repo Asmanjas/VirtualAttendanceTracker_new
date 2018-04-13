@@ -9,26 +9,20 @@
     <TextView
         android:id="@+id/formLogo"
         android:layout_width="match_parent"
-        android:layout_height="89dp"
+        android:layout_height="150dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:background="#7c6b47"
+        android:background="@color/colorPrimaryDark"
         android:scaleType="fitCenter"
-        android:textColor="#ff000000"
-        android:textSize="26dp" />
+        android:text="Faculty Module"
+        android:textColor="@color/white"
+        android:fontFamily="@font/merienda"
+        android:gravity="center"
+        android:textSize="25sp"
+        />
 
-    <TextView
-        android:id="@+id/topic"
-        android:layout_width="300dp"
-        android:layout_height="35dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="10dp"
-        android:text="TAKE  ATTENDANCE"
-        android:textSize="29dp"
-        android:textColor="#dfb488"/>
+
 
     <ImageView
         android:id="@+id/imageView"
@@ -49,8 +43,9 @@
         android:layout_alignTop="@+id/imageView"
         android:layout_toEndOf="@+id/imageView"
         android:text="DATE"
-        android:textColor="#101010"
-        android:textSize="17dp" />
+        android:textColor="@color/black"
+        android:textSize="17dp"
+        android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/textView2"
@@ -59,9 +54,9 @@
         android:layout_alignBottom="@+id/imageView"
         android:layout_alignLeft="@+id/date_faculty_module"
         android:layout_alignStart="@+id/date_faculty_module"
-        android:text="DD/MM/YYYY"
+        android:text="Date"
         android:textSize="14dp"
-        android:textColor="#d6c0c0"/>
+        android:textColor="@color/black"/>
 
     <ImageView
         android:id="@+id/imageView2"
@@ -81,7 +76,8 @@
         android:layout_toEndOf="@+id/imageView2"
         android:layout_toRightOf="@+id/imageView2"
         android:text="FACULTY NAME"
-        android:textColor="#151414"
+        android:textColor="@color/black"
+        android:textStyle="bold"
         android:textSize="15dp" />
 
     <TextView
@@ -93,7 +89,7 @@
         android:layout_toRightOf="@+id/imageView2"
         android:text="NAME"
         android:textSize="15dp"
-        android:textColor="#d6c0c0"/>
+        android:textColor="@color/black"/>
 
     <ImageView
         android:id="@+id/imageView3"
@@ -113,7 +109,8 @@
         android:layout_toEndOf="@+id/imageView3"
         android:layout_toRightOf="@+id/imageView3"
         android:text="SUBJECT"
-        android:textColor="#151414"
+        android:textColor="@color/black"
+        android:textStyle="bold"
         android:textSize="15dp" />
 
     <TextView
@@ -125,17 +122,16 @@
         android:layout_toRightOf="@+id/imageView3"
         android:text="SUBJECT"
         android:textSize="15dp"
-        android:textColor="#d6c0c0" />
+        android:textColor="@color/black" />
 
     <Button
         android:id="@+id/take_attendance_button_faculty_module"
         android:layout_width="185dp"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/imageView3"
-        android:layout_alignStart="@+id/imageView3"
         android:layout_below="@+id/textView6"
-        android:layout_marginTop="66dp"
-        android:background="@drawable/rounded"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/shape_activity_main_buttons"
         android:drawablePadding="5dp"
         android:text="@string/attendance"
         android:textColor="#121212"
@@ -143,16 +139,15 @@
 
     <TextView
         android:id="@+id/tvItemSelected"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/take_attendance_button_faculty_module"
-        android:layout_alignStart="@+id/take_attendance_button_faculty_module"
+        android:gravity="bottom"
         android:layout_below="@+id/take_attendance_button_faculty_module"
-        android:layout_marginTop="46dp"
-        android:text="TEST"
-        android:textColor="#aaa"
-        android:textSize="25dp"
-        android:textStyle="italic" />
+        android:layout_marginTop="35dp"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:textStyle="bold"
+         />
 
 
 </RelativeLayout>

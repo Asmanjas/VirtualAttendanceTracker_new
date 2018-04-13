@@ -23,7 +23,7 @@ public class login_student extends AppCompatActivity {
     Button log_in,create_account,back;
     String roll_number_holder,password_holder;
     String final_result;
-    String HttpURL = "http://10.50.33.206/VirtualAttendanceTracker/StudentLogin.php";
+    String HttpURL = "http://192.168.0.102/VirtualAttendanceTracker/StudentLogin.php";
     Boolean CheckEditText ;
     ProgressDialog progressDialog;
     HashMap<String,String> hashMap = new HashMap<>();

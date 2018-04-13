@@ -1,60 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gbackground"
-    tools:context=".login_faculty">
+    tools:context=".login_faculty"
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="510dp"
-        android:layout_gravity="top"
-        android:gravity="top"
+        android:layout_height="180dp"
+        android:background="@color/colorPrimaryDark"
+        android:orientation="vertical"
+        android:padding="25dp">
+
+        <TextView
+            android:layout_width="234dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/merienda"
+            android:text="Faculty Login"
+            android:textAlignment="textStart"
+            android:textColor="#fff"
+            android:textSize="30sp" />
+
+        <TextView
+            android:layout_width="305dp"
+            android:layout_height="39dp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/merienda"
+            android:text="We build future"
+            android:textAlignment="viewStart"
+            android:textColor="#fff"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="227dp"
+        android:gravity="center"
+
         android:orientation="vertical">
 
         <EditText
             android:id="@+id/faculty_name_login_faculty"
-            android:layout_width="313dp"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="33dp"
-            android:layout_marginTop="22dp"
-            android:hint="FACULTY NAME"
-            android:paddingTop="60dp"
-
-            />
+            android:drawableLeft="@drawable/ic_person_black_24dp"
+            android:hint="FACULTY NAME" />
 
         <EditText
             android:id="@+id/faculty_password_login_faculty"
-            android:layout_width="313dp"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="33dp"
-            android:layout_marginTop="12dp"
-            android:hint="PASSWORD" />
+            android:drawableLeft="@drawable/ic_vpn_key_black_24dp"
+            android:hint="PASSWORD"
+            android:inputType="textPassword" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="144dp"
+        android:layout_marginTop="-90dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/back_button_login_faculty"
+            android:layout_width="111dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@drawable/button_style_new"
+            android:drawableLeft="@drawable/ic_arrow_back_black_24dp"
+            android:text="back"
+            android:textColor="#fff" />
 
         <Button
             android:id="@+id/login_button_login_faculty"
-            android:layout_width="187dp"
-            android:layout_height="48dp"
-            android:layout_marginLeft="86dp"
-            android:layout_marginTop="57dp"
-            android:background="@drawable/buttonstyle"
-            android:text="LOGIN"
-            android:textColor="#fff"
-            android:textSize="17dp" />
+            android:layout_width="111dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@drawable/button_style_new"
+            android:drawableRight="@drawable/ic_arrow_forward_black_24dp"
+            android:text="go"
+            android:textColor="#fff" />
 
-        <Button
-            android:id="@+id/register_button_login_faculty"
-            android:layout_width="187dp"
-            android:layout_height="49dp"
-            android:layout_marginLeft="86dp"
-            android:layout_marginTop="37dp"
-            android:background="@drawable/buttonstyle"
-            android:text="REGISTER"
-            android:textColor="#fff"
-            android:textSize="18dp" />
     </LinearLayout>
-</RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="-30dp"
+        android:gravity="center"
+
+        >
 
 
+    </LinearLayout>
+</LinearLayout>

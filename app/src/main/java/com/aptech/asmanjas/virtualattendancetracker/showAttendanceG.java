@@ -71,7 +71,7 @@ public class showAttendanceG extends AppCompatActivity {
         x2 = intent2.getIntArrayExtra("array_two");
         x3 = intent2.getStringArrayExtra("array_three");
 
-        String url = "http://10.50.33.206/VirtualAttendanceTracker/G/AccessStudentDetailsForAttendancePercentG.php?email=";
+        String url = "http://192.168.0.102/VirtualAttendanceTracker/G/AccessStudentDetailsForAttendancePercentG.php?email=";
 
         studentDetailsForAttendancePercent(email_x, url + email_x);
         stubList = (ViewStub) findViewById(R.id.stublist_g);

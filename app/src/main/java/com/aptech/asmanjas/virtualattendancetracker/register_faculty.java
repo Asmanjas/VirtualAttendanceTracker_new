@@ -24,7 +24,7 @@ public class register_faculty extends AppCompatActivity {
     EditText Faculty_Name,Last_Name,Faculty_Subject,Faculty_Password,Faculty_RePassword,Batch_Name,Batch_Name_Lab;
     String Faculty_Name_Holder,L_Name_Holder,Faculty_Subject_Holder,Faculty_Password_holder,Faculty_RePassword_holder,Batch_Name_Holder,Batch_Name_Lab_Holder;
     String FinalResult;
-    String HttpUrl = "http://10.50.33.206/VirtualAttendanceTracker/FacultyRegistration.php";
+    String HttpUrl = "http://192.168.0.102/VirtualAttendanceTracker/FacultyRegistration.php";
     Boolean CheckEditText;
     ProgressDialog progressDialog;
     HashMap<String,String> hashMap = new HashMap<>();

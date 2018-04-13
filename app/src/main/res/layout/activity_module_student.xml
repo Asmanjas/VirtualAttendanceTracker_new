@@ -7,18 +7,13 @@
     android:layout_height="match_parent"
     tools:context=".Module_student">
 
-    <Button
-        android:id="@+id/back_button_module_student"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginLeft="20dp"
-        android:background="@drawable/x1" />
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="40dp"
+        android:padding="55dp"
         android:background="@color/colorPrimaryDark"
         >
 
@@ -29,37 +24,22 @@
             android:layout_height="wrap_content"
             android:textSize="30dp"
             android:text="About Me"
-            android:textColor="#fff"/>
+            android:textColor="#fff"
+            android:fontFamily="@font/merienda"/>
 
 
 
     </LinearLayout>
-    <ImageView
-        android:id="@+id/Circle"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:background="@drawable/b2"
 
-        android:layout_marginLeft="300dp"
-        android:layout_marginTop="105dp"
-        />
 
-    <ImageView
-        android:id="@+id/starImage"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:background="@drawable/ic_star_black_24dp"
-        android:tint="@color/green"
-        android:layout_marginLeft="300dp"
-        android:layout_marginTop="105dp"
-        />
+
 
     <ImageView
         android:id="@+id/listItemNoteImg1"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_gravity="center_vertical"
-        android:layout_marginTop="170dp"
+        android:layout_marginTop="180dp"
         android:layout_centerVertical="true"
         android:src="@drawable/ic_person_black_24dp"
         android:tint="@color/green"
@@ -78,7 +58,7 @@
         android:text="StuName"
         android:textStyle="bold"
         android:textSize="17sp"
-        android:layout_marginTop="170sp"
+        android:layout_marginTop="185sp"
         android:id="@+id/student_name_module_g"
         android:layout_alignParentTop="true"
         android:layout_toEndOf="@+id/listItemNoteImg1"
@@ -106,7 +86,7 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_gravity="center_vertical"
-        android:layout_marginTop="230dp"
+        android:layout_marginTop="240dp"
         android:layout_centerVertical="true"
         android:src="@drawable/ic_assignment_ind_black_24dp"
         android:tint="@color/green"
@@ -125,7 +105,7 @@
         android:text="17CA0**"
         android:textStyle="bold"
         android:textSize="17sp"
-        android:layout_marginTop="230sp"
+        android:layout_marginTop="245sp"
         android:id="@+id/email_id_module_g"
         android:layout_alignParentTop="true"
         android:layout_toEndOf="@+id/listItemNoteImg2"
@@ -153,7 +133,7 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_gravity="center_vertical"
-        android:layout_marginTop="290dp"
+        android:layout_marginTop="300dp"
         android:layout_centerVertical="true"
         android:src="@drawable/ic_group_black_24dp"
         android:tint="@color/green"
@@ -172,7 +152,7 @@
         android:text="Theory_Batch"
         android:textStyle="bold"
         android:textSize="17sp"
-        android:layout_marginTop="290sp"
+        android:layout_marginTop="305sp"
         android:id="@+id/Theory_Batch_module_student"
         android:layout_alignParentTop="true"
         android:layout_toEndOf="@+id/img"
@@ -200,7 +180,7 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_gravity="center_vertical"
-        android:layout_marginTop="350dp"
+        android:layout_marginTop="360dp"
         android:layout_centerVertical="true"
         android:src="@drawable/ic_group_black_24dp"
         android:tint="@color/green"
@@ -219,7 +199,7 @@
         android:text="Lab Batch"
         android:textStyle="bold"
         android:textSize="17sp"
-        android:layout_marginTop="350sp"
+        android:layout_marginTop="365sp"
         android:id="@+id/LAB_Batch_module_student"
         android:layout_alignParentTop="true"
         android:layout_toEndOf="@+id/img"
@@ -247,7 +227,7 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_gravity="center_vertical"
-        android:layout_marginTop="400dp"
+        android:layout_marginTop="410dp"
         android:layout_centerVertical="true"
         android:src="@drawable/ic_control_point_black_24dp"
         android:tint="@color/green"
@@ -265,7 +245,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_marginBottom="2dp"
-        android:layout_marginTop="400sp"
+        android:layout_marginTop="415sp"
         android:layout_toEndOf="@+id/listItemNoteImg"
         android:layout_toRightOf="@id/listItemNoteImg"
         android:ellipsize="end"
@@ -294,8 +274,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="480dp"
-        android:text="         Want to know more about attendance?"
-        android:textSize="15dp"
+        android:textAlignment="center"
+        android:text="Want to know more about attendance?"
+        android:textSize="20sp"
         android:textStyle="bold" />
 
     <LinearLayout
@@ -310,8 +291,8 @@
             android:layout_height="match_parent"
             android:layout_marginBottom="9dp"
             android:layout_marginLeft="130dp"
-            android:layout_marginTop="510dp"
-            android:background="@drawable/buttonstyle"
+            android:layout_marginTop="520dp"
+            android:background="@drawable/shape_activity_main_buttons"
 
             android:text="follow me"
             android:textSize="15dp" />
