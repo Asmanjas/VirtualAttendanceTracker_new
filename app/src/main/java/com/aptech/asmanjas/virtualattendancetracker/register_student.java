@@ -23,7 +23,7 @@ public class register_student extends AppCompatActivity {
     EditText First_Name,Last_Name,Roll_Number,Password,RePassword;
     String F_Name_Holder,L_Name_Holder,Roll_Number_holder,Password_holder,RePassword_holder;
     String FinalResult,truncated_roll_number;
-    String HttpUrl = "http://192.168.0.102/VirtualAttendanceTracker/StudentRegistration.php";
+    String HttpUrl = "http://10.50.33.206/VirtualAttendanceTracker/StudentRegistration.php";
     Boolean CheckEditText;
     ProgressDialog progressDialog;
     HashMap<String,String> hashMap = new HashMap<>();

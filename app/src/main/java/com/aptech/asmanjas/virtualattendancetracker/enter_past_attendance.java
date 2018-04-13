@@ -21,7 +21,7 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 
-public class Thursday extends Activity implements
+public class enter_past_attendance extends Activity implements
         OnItemSelectedListener {
 
     Calendar dateTime = Calendar.getInstance();
@@ -33,10 +33,10 @@ public class Thursday extends Activity implements
     String FinalResult;
     String time_startx1,time_endx1,time_startx2,time_endx2,time_startx3,time_endx3,time_startx4,time_endx4;
     String label;// = new String[8];
-    public String email_holder="initial",email_holderx;
-    public String day_holder = "Thursday";
+    public String email_holder="initial";
 
-    String HttpUrl = "http://10.50.33.206/VirtualAttendanceTracker/G/InsertTimeTable.php";
+
+    String HttpUrl = "http://10.50.33.206/VirtualAttendanceTracker/G/updatePastAttendance.php";
 
     ProgressDialog progressDialog;
     HashMap<String,String> hashMap1 = new HashMap<>();
@@ -45,9 +45,9 @@ public class Thursday extends Activity implements
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_thursday);
+        setContentView(R.layout.activity_enter_past_attendance);
 
-        btnnext = (Button)findViewById(R.id.next_button_thursday) ;
+        btnnext = (Button)findViewById(R.id.next_button_upAttendance) ;
         btnnext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -55,8 +55,7 @@ public class Thursday extends Activity implements
 
                 }
                 else {
-                    Intent x = new Intent(Thursday.this, Friday.class);
-                    x.putExtra("email_fri", email_holder);
+                    Intent x = new Intent(enter_past_attendance.this, enterDetailsG.class);
                     startActivity(x);
                 }
             }
@@ -65,34 +64,34 @@ public class Thursday extends Activity implements
 
 
         Intent xk = getIntent();
-        email_holder = xk.getStringExtra("email_thu");
+        email_holder = xk.getStringExtra("email_fri1");
 
 
         // Spinner element
-        spinner1 = (Spinner) findViewById(R.id.spinner1_thu);
-        spinner2 = (Spinner) findViewById(R.id.spinner2_thu);
-        spinner3 = (Spinner) findViewById(R.id.spinner3_thu);
-        spinner4 = (Spinner) findViewById(R.id.spinner4_thu);
+        spinner1 = (Spinner) findViewById(R.id.spinner1_past);
+        spinner2 = (Spinner) findViewById(R.id.spinner2_past);
+        spinner3 = (Spinner) findViewById(R.id.spinner3_past);
+        spinner4 = (Spinner) findViewById(R.id.spinner4_past);
         /*spinner5 = (Spinner) findViewById(R.id.spinner5);
         spinner6 = (Spinner) findViewById(R.id.spinner6);
         spinner7 = (Spinner) findViewById(R.id.spinner7);
         spinner8 = (Spinner) findViewById(R.id.spinner8);*/
 
 
-        ts1 = (TextView)findViewById(R.id.time_start1_thu);
-        ts2 = (TextView)findViewById(R.id.time_start2_thu);
-        ts3 = (TextView)findViewById(R.id.time_start3_thu);
-        ts4 = (TextView)findViewById(R.id.time_start4_thu);
+        ts1 = (TextView)findViewById(R.id.time_start1_past);
+        ts2 = (TextView)findViewById(R.id.time_start2_past);
+        ts3 = (TextView)findViewById(R.id.time_start3_past);
+        ts4 = (TextView)findViewById(R.id.time_start4_past);
         /*ts5 = (TextView)findViewById(R.id.time_start5);
         ts6 = (TextView)findViewById(R.id.time_start6);
         ts7 = (TextView)findViewById(R.id.time_start7);
         ts8 = (TextView)findViewById(R.id.time_start8);*/
 
 
-        te1 = (TextView)findViewById(R.id.time_end1_thu);
-        te2 = (TextView)findViewById(R.id.time_end2_thu);
-        te3 = (TextView)findViewById(R.id.time_end3_thu);
-        te4 = (TextView)findViewById(R.id.time_end4_thu);
+        te1 = (TextView)findViewById(R.id.time_end1_past);
+        te2 = (TextView)findViewById(R.id.time_end2_past);
+        te3 = (TextView)findViewById(R.id.time_end3_past);
+        te4 = (TextView)findViewById(R.id.time_end4_past);
         /*te5 = (TextView)findViewById(R.id.time_end5);
         te6 = (TextView)findViewById(R.id.time_end6);
         te7 = (TextView)findViewById(R.id.time_end7);
@@ -195,10 +194,7 @@ public class Thursday extends Activity implements
         te1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                updateTime9();
-
-
-
+                time_startx1 = ts1.getText().toString();
             }
         });
         updateTextLabel9();
@@ -668,7 +664,7 @@ public class Thursday extends Activity implements
             time_endx2 = (hours + ":" + mins + ":00");
             te2.setText(hours + ":" + mins);
         }
-        InsertIntoTable(email_holder, "Thursday", label, time_startx2, time_endx2, HttpUrl);
+        InsertIntoTable(email_holder, "Friday", label, time_startx2, time_endx2, HttpUrl);
 
 
 
@@ -717,7 +713,7 @@ public class Thursday extends Activity implements
         }
 
 
-        InsertIntoTable(email_holder, "Thursday", label, time_startx1, time_endx1, HttpUrl);
+        InsertIntoTable(email_holder, "Friday", label, time_startx1, time_endx1, HttpUrl);
 
 
     }
@@ -767,7 +763,7 @@ public class Thursday extends Activity implements
             time_endx3 = (hours + ":" + mins + ":00");
             te3.setText(hours + ":" + mins);
         }
-        InsertIntoTable(email_holder, "Thursday", label, time_startx3, time_endx3, HttpUrl);
+        InsertIntoTable(email_holder, "Friday", label, time_startx3, time_endx3, HttpUrl);
 
     }
     private void updateTime11(){
@@ -812,7 +808,7 @@ public class Thursday extends Activity implements
             te4.setText(hours + ":" + mins);
 
         }
-        InsertIntoTable(email_holder, "Thursday", label, time_startx4, time_endx4, HttpUrl);
+        InsertIntoTable(email_holder, "Friday", label, time_startx4, time_endx4, HttpUrl);
 
     }
     private void updateTime12(){
@@ -968,6 +964,7 @@ public class Thursday extends Activity implements
 
 
 
+
     }
     private void updateTime16(){
         new TimePickerDialog(this,t16,dateTime.get(Calendar.HOUR_OF_DAY),dateTime.get(Calendar.MINUTE),true).show();
@@ -1007,7 +1004,7 @@ public class Thursday extends Activity implements
 
                 }
                 else{
-                    Toast.makeText(Thursday.this,httpResponseMsg.toString(), Toast.LENGTH_LONG).show();
+                    Toast.makeText(enter_past_attendance.this,httpResponseMsg.toString(), Toast.LENGTH_LONG).show();
 
                 }
 
@@ -1049,3 +1046,4 @@ public class Thursday extends Activity implements
 
 
 }
+

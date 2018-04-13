@@ -23,12 +23,12 @@ public class enterDetailsG extends AppCompatActivity {
 
     Button btn_subject_names,btn_done;
     HashMap<String,String> hashMap = new HashMap<>();
-    String email_holder = "";
+
     public final String email_holder_parse = "";
     String finalresult = "";
     HttpParse httpParse = new HttpParse();
-    String url = "http://192.168.0.102/VirtualAttendanceTracker/G/insertLocation.php";
-    //ProgressDialog progressDialog = new ProgressDialog();
+    String url = "http://10.50.33.206/VirtualAttendanceTracker/G/insertLocation.php";
+    String email_holder,first_name_holder,last_name_holder,password_holder;
 
     /*placePicker start here*/
 
@@ -43,6 +43,9 @@ public class enterDetailsG extends AppCompatActivity {
         btn_subject_names = (Button)findViewById(R.id.enter_subject_names_enterDetailsG);
         Intent q = getIntent();
         email_holder = q.getStringExtra("user_email");
+        first_name_holder = q.getStringExtra("first_name");
+        last_name_holder = q.getStringExtra("last_name");
+        password_holder = q.getStringExtra("password");
         btn_done = (Button)findViewById(R.id.done_button_enter_details_g);
         //tvPlace.setText(email_holder);
 
@@ -51,7 +54,10 @@ public class enterDetailsG extends AppCompatActivity {
         public void onClick(View v) {
 
             Intent a= new Intent(enterDetailsG.this,subjectNameG.class);
-            a.putExtra("email_holder",email_holder);
+            a.putExtra("emailx",email_holder);
+            a.putExtra("first_namex",first_name_holder);
+            a.putExtra("last_namex",last_name_holder);
+            a.putExtra("passwordx",password_holder);
             startActivity(a);
         }
     });
@@ -59,6 +65,7 @@ btn_done.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
         Intent k = new Intent(enterDetailsG.this,gLoginScreenActivity.class);
+
         startActivity(k);
     }
 });

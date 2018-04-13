@@ -25,7 +25,7 @@ public class login_faculty extends AppCompatActivity {
     String Class_Name_Holder,Faculty_Name_Holder,Faculty_Password_Holder;
     String FinalResult;
     Boolean CheckEditText ;
-    String HttpURL = "http://192.168.0.102/VirtualAttendanceTracker/FacultyLogin.php";
+    String HttpURL = "http://10.50.33.206/VirtualAttendanceTracker/FacultyLogin.php";
     ProgressDialog progressDialog;
     HashMap<String,String> hashMap = new HashMap<>();
     HttpParse httpParse = new HttpParse();

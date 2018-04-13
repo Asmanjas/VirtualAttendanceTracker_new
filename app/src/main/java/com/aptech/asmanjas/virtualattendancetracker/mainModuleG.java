@@ -60,14 +60,14 @@ public class mainModuleG extends AppCompatActivity {
 
     //url for starting the service at specific time
 
-    String urlForStartTime  = "http://192.168.0.102/VirtualAttendanceTracker/G/AccessStartTimeOfService.php";
+    String urlForStartTime  = "http://10.50.33.206/VirtualAttendanceTracker/G/AccessStartTimeOfService.php";
 
-   String urlForEndTime = "http://192.168.0.102/VirtualAttendanceTracker/G/AccessEndTimeForService.php";
+   String urlForEndTime = "http://10.50.33.206/VirtualAttendanceTracker/G/AccessEndTimeForService.php";
 
-    String url1 = "http://192.168.0.102/VirtualAttendanceTracker/G/AccessStudentDetailsG.php";
+    String url1 = "http://10.50.33.206/VirtualAttendanceTracker/G/AccessStudentDetailsG.php";
 
-    String url2 = "http://192.168.0.102/VirtualAttendanceTracker/G/AccessStudentDetailsGG.php";
-    String url3 = "http://192.168.0.102/VirtualAttendanceTracker/G/AccessStudentDetailsForAttendancePercentG.php";
+    String url2 = "http://10.50.33.206/VirtualAttendanceTracker/G/AccessStudentDetailsGG.php";
+    String url3 = "http://10.50.33.206/VirtualAttendanceTracker/G/AccessStudentDetailsForAttendancePercentG.php";
 
 
 

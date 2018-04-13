@@ -19,7 +19,7 @@ public class SignUpG extends AppCompatActivity {
     EditText first_name,last_name,Email_Address,Password,REpassword;
     String first_name_holder,last_name_holder,Email_address_holder,Password_holder,REpassword_holder;
     String FinalResult;
-    String HttpUrl = "http://192.168.0.102/VirtualAttendanceTracker/G/gSignUp.php";
+
     Boolean CheckEditText;
     ProgressDialog progressDialog;
     HashMap<String,String> hashMap = new HashMap<>();
@@ -52,24 +52,35 @@ public class SignUpG extends AppCompatActivity {
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                first_name_holder = first_name.getText().toString();
+                last_name_holder = last_name.getText().toString();
+                Email_address_holder = Email_Address.getText().toString();
+                Password_holder = Password.getText().toString();
+                REpassword_holder = REpassword.getText().toString();
                 CheckEditTextIsEmptyOrNot();
                 if(CheckEditText){
-                    USERRegistrationFunction(Email_address_holder,first_name_holder,last_name_holder,Password_holder,REpassword_holder);
+                    Intent z = new Intent(SignUpG.this,enterDetailsG.class);
+                    z.putExtra("user_email",Email_address_holder);
+                    z.putExtra("first_name",first_name_holder);
+                    z.putExtra("last_name",last_name_holder);
+                    z.putExtra("password",Password_holder);
+                    z.putExtra("re_password",REpassword_holder);
+
+                    startActivity(z);
                 }
-                else
-                {
-                    Toast.makeText(SignUpG.this,"please fill all the fields",Toast.LENGTH_LONG).show();
-                }
+                    else
+                    {
+                        Toast.makeText(SignUpG.this,"please fill all the fields",Toast.LENGTH_LONG).show();
+                    }
+
+
+
+
             }
         });
     }
 
     public void CheckEditTextIsEmptyOrNot(){
-        first_name_holder = first_name.getText().toString();
-        last_name_holder = last_name.getText().toString();
-        Email_address_holder = Email_Address.getText().toString();
-        Password_holder = Password.getText().toString();
-        REpassword_holder = REpassword.getText().toString();
 
         if(TextUtils.isEmpty(first_name_holder) ||TextUtils.isEmpty(last_name_holder) || TextUtils.isEmpty(Email_address_holder) || TextUtils.isEmpty(Password_holder) || TextUtils.isEmpty(REpassword_holder))
         {
@@ -84,7 +95,7 @@ public class SignUpG extends AppCompatActivity {
 
     }
 
-    public void USERRegistrationFunction(final String email,final String F_Name,final String L_Name,final String Password,final String Repassword){
+   /* public void USERRegistrationFunction(final String email,final String F_Name,final String L_Name,final String Password,final String Repassword){
         class UserRegisterFunctionClass extends AsyncTask<String,Void,String >{
             @Override
             protected void onPreExecute() {
@@ -101,11 +112,17 @@ public class SignUpG extends AppCompatActivity {
                 progressDialog.dismiss();
 
                 Toast.makeText(SignUpG.this,httpResponseMsg.toString(), Toast.LENGTH_LONG).show();
-                Intent z= new Intent(SignUpG.this,enterDetailsG.class);
-                //z.putExtra(user_email,email);
-                Intent xk = new Intent(SignUpG.this,Monday.class);
-                xk.putExtra("user_email",Email_address_holder);
-                startActivity(z);
+                if(httpResponseMsg.toString().equals("Email Already Exist"))
+                {
+
+                }
+                else {
+                    Intent z = new Intent(SignUpG.this, enterDetailsG.class);
+                    z.putExtra("user_email",Email_address_holder);
+                    Intent xk = new Intent(SignUpG.this, Monday.class);
+                    xk.putExtra("user_email", Email_address_holder);
+                    startActivity(z);
+                }
 
             }
 
@@ -115,18 +132,9 @@ public class SignUpG extends AppCompatActivity {
 
                 hashMap.put("email",params[0]);
                 hashMap.put("F_name",params[1]);
-
                 hashMap.put("L_name",params[2]);
-
-
-
                 hashMap.put("password",params[3]);
-
-
-
-
                 FinalResult = httpParse.postRequest(hashMap, HttpUrl);
-
                 return FinalResult;
             }
         }
@@ -134,7 +142,7 @@ public class SignUpG extends AppCompatActivity {
         UserRegisterFunctionClass userRegisterFunctionClass = new UserRegisterFunctionClass();
 
         userRegisterFunctionClass.execute(email,F_Name,L_Name,Password,Repassword);
-    }
+    }*/
 
 
 }

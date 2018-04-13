@@ -48,9 +48,9 @@ public class Module_faculty extends AppCompatActivity {
     String[] SelectedItems;
 
     String faculty_name_holder;
-    String url = "http://192.168.0.102/VirtualAttendanceTracker/AccessFacultyDetails.php?FacultyName=";
-    String url2 = "http://192.168.0.102/VirtualAttendanceTracker/AccessStudentDetailsforAttendance.php?Subject=";
-    String url3 = "http://192.168.0.102/VirtualAttendanceTracker/UpdateAttendanceTable.php";
+    String url = "http://10.50.33.206/VirtualAttendanceTracker/AccessFacultyDetails.php?FacultyName=";
+    String url2 = "http://10.50.33.206/VirtualAttendanceTracker/AccessStudentDetailsforAttendance.php?Subject=";
+    String url3 = "http://10.50.33.206/VirtualAttendanceTracker/UpdateAttendanceTable.php";
 
     @Override
     protected void  onCreate(Bundle savedInstanceState) {

@@ -18,7 +18,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Wednesday">
+        <activity android:name=".LauncherActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -30,8 +30,9 @@
         <activity android:name=".login_faculty" />
         <activity android:name=".register_faculty" />
         <activity android:name=".gLoginActivity" />
-        <activity android:name=".LauncherActivity" />
+        <activity android:name=".SignUpG" />
         <activity android:name=".gLoginScreenActivity" />
+        <activity android:name=".enter_past_attendance"/>
         <activity android:name=".MainActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -56,15 +57,15 @@
         <activity android:name=".showAttendance" />
         <activity android:name=".enterDetailsG" />
         <activity android:name=".Tuesday" />
-        <activity android:name=".SignUpG" />
+        <activity android:name=".Wednesday" />
         <activity android:name=".Thursday" />
         <activity android:name=".Friday" />
-        <activity
-            android:name=".MapsActivity"/>
+        <activity android:name=".MapsActivity" />
+        <activity android:name=".showAttendanceG" />
 
-        <activity android:name=".showAttendanceG"></activity>
+        <service android:name=".AttendanceCalculationService" />
 
-        <service android:name=".AttendanceCalculationService"/>
+        <activity android:name=".enter_past_attendance"></activity>
     </application>
 
 </manifest>

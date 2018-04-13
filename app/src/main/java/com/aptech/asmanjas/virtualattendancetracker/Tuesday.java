@@ -36,7 +36,7 @@ public class Tuesday extends Activity implements
     public String email_holder="initial",email_holderx;
     public String day_holder = "Tuesday";
 
-    String HttpUrl = "http://192.168.0.102/VirtualAttendanceTracker/G/InsertTimeTable.php";
+    String HttpUrl = "http://10.50.33.206/VirtualAttendanceTracker/G/InsertTimeTable.php";
 
     ProgressDialog progressDialog;
     HashMap<String,String> hashMap1 = new HashMap<>();

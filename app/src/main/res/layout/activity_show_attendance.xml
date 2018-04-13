@@ -5,22 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".showAttendance"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/gbackground">
 
-
-    <TextView
-        android:id="@+id/textView_fortesting"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:text="Asmanjas"
-        android:textColor="@color/graylight"
-        android:textStyle="bold" />
 
     <ViewStub
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="250dp"
+        android:layout_marginTop="10dp"
         android:id="@+id/stublist"
         android:inflatedId="@+id/showlayout"
         android:layout="@layout/frame"/>

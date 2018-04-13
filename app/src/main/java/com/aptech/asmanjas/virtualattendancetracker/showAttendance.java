@@ -90,7 +90,7 @@ for(int i = 0 ;i<2;i++)
         //tester.setText(String.valueOf(x1[0]));
         //roll_number_x = String.valueOf(10);
 
-        String url2 = "http://192.168.0.102/VirtualAttendanceTracker/AccessStudentDetailsForAttendancePercent.php?Roll_Number=";
+        String url2 = "http://10.50.33.206/VirtualAttendanceTracker/AccessStudentDetailsForAttendancePercent.php?Roll_Number=";
 
         //downloadJSON(roll_number_holder, url + roll_number_x);
         downloadJSON(roll_number_x, url2 + roll_number_x);

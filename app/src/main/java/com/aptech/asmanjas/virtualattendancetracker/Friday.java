@@ -36,7 +36,7 @@ public class Friday extends Activity implements
     public String email_holder="initial",email_holderx;
     public String day_holder = "Friday";
 
-    String HttpUrl = "http://192.168.0.102/VirtualAttendanceTracker/G/InsertTimeTable.php";
+    String HttpUrl = "http://10.50.33.206/VirtualAttendanceTracker/G/InsertTimeTable.php";
 
     ProgressDialog progressDialog;
     HashMap<String,String> hashMap1 = new HashMap<>();
@@ -55,8 +55,8 @@ public class Friday extends Activity implements
 
                 }
                 else {
-                    Intent x = new Intent(Friday.this, enterDetailsG.class);
-                    //x.putExtra("email_thu", email_holder);
+                    Intent x = new Intent(Friday.this, enter_past_attendance.class);
+                    x.putExtra("email_fri1", email_holder);
                     startActivity(x);
                 }
             }
